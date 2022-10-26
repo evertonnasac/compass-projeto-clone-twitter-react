@@ -33,7 +33,7 @@ function AreaPost(){
             <div className="post_text">
                 <Image src="" alt= "" className = "image_profile" />
 
-                <Input type="textarea" 
+                <Input type="text" 
                     maxlength = "380" 
                     placeholder="What’s happening?"  
                     className = "input_tweet" />
