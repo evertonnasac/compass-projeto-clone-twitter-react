@@ -1,12 +1,12 @@
 
-interface photoProps{
+interface imgProps{
     src: string,
     className: string,
     alt : string
   
 }
 
-function Image (props : photoProps){
+function Image (props : imgProps){
     return(
         <img {...props}/>
     )

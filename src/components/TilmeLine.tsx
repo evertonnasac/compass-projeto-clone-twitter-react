@@ -1,11 +1,13 @@
-import AreaTweetInput from "./AreaTweetInput";
+import AreaPost from "./AreaPost";
+
+import "../styles/components/timeline.sass"
 
 
 function TimeLine (){
 
     return(
-        <main>
-            <AreaTweetInput/>
+        <main className="main_content">
+            <AreaPost/>
         </main>
     )
   

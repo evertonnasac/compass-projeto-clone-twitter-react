@@ -1,0 +1,57 @@
+@use "../root"
+
+.post
+    width: 90%
+    height: 100px
+
+    display: flex
+    flex-direction: column
+    justify-content: space-between
+
+    margin: 0 auto
+
+    .post_text
+        height: 45%
+        display: flex
+        gap: 10px
+        
+        .image_profile
+            width: 15%
+            max-width: 50px
+            height: 100%
+
+        
+        .input_tweet
+            width: 80%
+            height: 20px
+            border: none
+
+    .post_options
+
+        height: 45%
+        display: flex
+        justify-content: space-between
+
+
+        .post_icons_container
+        
+            .post_icons
+                    margin-right: 10px
+
+        .post_btn
+            @include root.buttonPattern()
+            
+            background-color: root.$color_principal
+            color: root.$color_text_button
+            opacity: 0.5
+
+            width: 20%
+            height: 30px
+            border-radius: 100px
+
+            
+            
+
+
+
+
