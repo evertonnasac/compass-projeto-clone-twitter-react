@@ -1,0 +1,46 @@
+@use "../root"
+
+.tweets_container
+    width: 90%
+    margin: 0 auto
+
+    .tweet_card
+        width: 100%
+        display: flex
+        margin: 25px 0
+
+        .tweet_content_photo
+            width: 15%
+            height: 100%
+
+            .tweet_photo_profile
+                width: 95%
+                max-width: 50px
+                border-radius: 100%
+                    
+        .tweet_content_info
+            width: 85%
+            height: 100%
+
+            .tweet_data
+                display: flex
+                gap: 10px
+
+                .tweet_tagname, .tweet_time
+                    color: root.$color_text_secundary
+            
+            .tweet_body
+                margin: 25px 0
+
+            .tweet_actions
+                width: 100%
+                display: flex
+                justify-content: space-between
+
+
+
+    
+                
+                
+            
+
