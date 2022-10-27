@@ -1,0 +1,44 @@
+@use "../root"
+
+.container_suggest
+    width: 100%
+    height: 25%
+
+    display: flex
+    flex-direction: column
+
+    .who_suggest
+        color: root.$color_text_principal
+        font-weight: 700
+
+    .card_suggest
+        width: 100%
+        height: 100%
+        display: flex
+        justify-content: space-between
+        align-items: center
+
+        .suggest_image
+            width: 20%
+            height: 90%
+            border-radius: 100%
+
+        .content_suggest_data
+
+            .suggest_name
+                color: root.$color_text_principal
+                font-weight: 700
+            
+            .suggest_tagname
+                color: root.$color_text_secundary
+            
+        .btn_follow
+             @include root.buttonPattern()
+             background-color: #fff
+             color: root.$color_principal
+             border: 1px solid root.$color_principal
+
+             height: 30%
+             border-radius: 100px
+
+        
