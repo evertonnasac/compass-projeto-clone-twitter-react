@@ -1,5 +1,8 @@
 import MenuLateral from "./components/Menulateral"
 import TimeLine from "./components/TimeLine"
+import News from "./components/News"
+
+
 import  "./styles/main.sass"
 
 
@@ -9,6 +12,7 @@ function App() {
     <div className="App">
       <MenuLateral/>
       <TimeLine/>
+      <News/>
     </div>
   )
 }
