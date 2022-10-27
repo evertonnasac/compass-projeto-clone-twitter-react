@@ -1,5 +1,5 @@
 import MenuLateral from "./components/Menulateral"
-import TimeLine from "./components/TilmeLine"
+import TimeLine from "./components/TimeLine"
 import  "./styles/main.sass"
 
 
