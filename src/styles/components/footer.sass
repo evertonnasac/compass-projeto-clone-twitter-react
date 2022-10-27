@@ -5,6 +5,7 @@ footer
     height: 10%
 
     display: flex
+    align-items: center
 
     position: absolute
     bottom: 0
@@ -12,10 +13,11 @@ footer
     background-color: root.$color_principal
 
     .footer_content_text
-        width: 80%
+        width: 70%
         height: 80%
 
         padding-left: 20%
+
 
         p
             font-weight: 700
@@ -30,12 +32,13 @@ footer
          height: 50%
 
          border-radius: 100px
-         margin-left: 10px
+         margin-right: 10px
 
     .btn_footer_login
         @include root.buttonPattern()
         color: root.$color_text_button
         background-color: root.$color_principal
+        border: 1px solid root.$color_text_darkmode
         
     
     .btn_footer_signup

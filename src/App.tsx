@@ -5,6 +5,7 @@ import Footer from "./components/Footer"
 
 
 import  "./styles/main.sass"
+import "./styles/reset.sass"
 
 
 function App() {
