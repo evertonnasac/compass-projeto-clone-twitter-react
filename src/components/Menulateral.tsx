@@ -43,7 +43,7 @@ function MenuLateral (){
                <ItemMenu key={index} item = {option.name} urlIcon = {option.urlIcon}/>   
             )}
 
-            <Button content = {"tweet"} class = "button_menuLateral"/>
+            <Button content = {"Tweet"} class = "button_menuLateral"/>
         </div>
         
        

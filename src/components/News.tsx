@@ -16,7 +16,5 @@ function News (){
         </aside>
        
     )
-
 }
-
 export default News 

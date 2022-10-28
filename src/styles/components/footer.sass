@@ -10,7 +10,7 @@ footer
     position: absolute
     bottom: 0
 
-    background-color: root.$color_principal
+    background-color: root.$color_blue_principal
 
     .footer_content_text
         width: 70%
@@ -21,11 +21,13 @@ footer
 
         p
             font-weight: 700
-            color: root.$color_text_darkmode
+            color: root.$color_white
 
         .footer_title
-            font-size: 22px
+            font-size: root.$font_size-lg
         
+        .footer_subtitle
+            font-size: root.$font_size-md2
         
     .btn_footer_login, .btn_footer_signup
          width: 100px
@@ -37,12 +39,12 @@ footer
     .btn_footer_login
         @include root.buttonPattern()
         color: root.$color_text_button
-        background-color: root.$color_principal
-        border: 1px solid root.$color_text_darkmode
+        background-color: root.$color_blue_principal
+        border: 1px solid root.$color_white
         
     
     .btn_footer_signup
         @include root.buttonPattern()
-        color: root.$color_text_secundary
-        background-color: root.$color_text_darkmode
+        color: root.$color_dark5
+        background-color: root.$color_white
            

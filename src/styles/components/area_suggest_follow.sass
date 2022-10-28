@@ -8,7 +8,7 @@
     flex-direction: column
 
     .who_suggest
-        color: root.$color_text_principal
+        color: root.$color_black
         font-weight: 700
 
     .card_suggest
@@ -26,17 +26,20 @@
         .content_suggest_data
 
             .suggest_name
-                color: root.$color_text_principal
+                color: root.$color_black
                 font-weight: 700
+                font-weight: root.$font_size-md2
             
             .suggest_tagname
-                color: root.$color_text_secundary
+                color: root.$color_dark5
+                font-size: root.$font_size-md2
+                font-weight: 500
             
         .btn_follow
              @include root.buttonPattern()
-             background-color: #fff
-             color: root.$color_principal
-             border: 1px solid root.$color_principal
+             background-color: root.$color_white
+             color: root.$color_blue_principal
+             border: 1px solid root.$color_blue_principal
 
              height: 30%
              border-radius: 100px
