@@ -2,6 +2,7 @@ import MenuLateral from "./components/Menulateral"
 import TimeLine from "./components/TimeLine"
 import News from "./components/News"
 import Footer from "./components/Footer"
+import SuggestFollow from "./components/SuggestFollow"
 
 
 import  "./styles/main.sass"
@@ -14,7 +15,10 @@ function App() {
     <div className="App">
       <MenuLateral/>
       <TimeLine/>
-      <News/>
+        <aside className="news_follows">
+           <News/>
+           <SuggestFollow/>
+        </aside>
       <Footer/>
     </div>
   )

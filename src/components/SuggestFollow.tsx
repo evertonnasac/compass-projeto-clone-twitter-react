@@ -3,7 +3,7 @@ import Button from "./Button"
 
 import "../styles/components/area_suggest_follow.sass"
 
-function AreaSuggestFollow (){
+function SuggestFollow (){
     return(
         <article className="container_suggest">
             <p className="who_suggest">Who to follow</p>
@@ -20,4 +20,4 @@ function AreaSuggestFollow (){
     )
 }
 
-export default AreaSuggestFollow
+export default SuggestFollow

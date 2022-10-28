@@ -1,6 +1,6 @@
 import {InputHTMLAttributes} from "react"
 
-interface buttonPropos extends InputHTMLAttributes<HTMLInputElement> {
+export interface buttonPropos extends InputHTMLAttributes<HTMLInputElement> {
     content: string,
     class: string
   
