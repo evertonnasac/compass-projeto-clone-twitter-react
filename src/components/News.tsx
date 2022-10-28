@@ -1,6 +1,5 @@
 import Input from "./Input"
 import NewsCard from "./NewsCard"
-import AreaSuggestFollow from "./SuggestFollow"
 
 import "../styles/components/news.sass"
 
