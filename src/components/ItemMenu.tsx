@@ -1,4 +1,4 @@
-
+import {Link} from "react-router-dom"
 import "../styles/components/menu_item_menu.sass"
 
 
@@ -9,9 +9,9 @@ interface ItemProps {
 
 function ItemMenu  ({item, urlIcon}: ItemProps){
     return(
-        <div className="item_menu">
+        <div className="item_menu" >
             <img src={urlIcon} alt="incone" className="icon_menu" />
-            <p>{item}</p>
+            <p><Link to = "/profile">{item}</Link></p>
         </div>
 
     )

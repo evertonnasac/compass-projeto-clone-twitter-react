@@ -1,6 +1,7 @@
 import Button from "../components/Button"
 import ItemMenu from "./ItemMenu"
 import ProfileLateral from "./ProfileLateral"
+import {Link} from "react-router-dom"
 
 import "../styles/components/menu_container.sass"
 
@@ -45,7 +46,6 @@ function MenuLateral (){
             )}
 
             <Button content = {"Tweet"} class = "button_menuLateral"/>
-
             <ProfileLateral/>
 
         </div>

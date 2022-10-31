@@ -1,5 +1,6 @@
 import Image from "./Image"
 import Button from "./Button"
+import Tabbar from "./Tabbar"
 
 import "../styles/components/profile_page.sass"
 
@@ -28,6 +29,7 @@ function ProfilePage (){
                         <span>50</span>Followers
                     </p>
                 </div>
+                <Tabbar/>
             </section>
 
         </div>
