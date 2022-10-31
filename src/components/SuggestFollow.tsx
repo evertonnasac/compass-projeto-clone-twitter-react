@@ -13,7 +13,12 @@ function SuggestFollow (){
                     <p className="suggest_name">Andre Joao</p>
                     <p className="suggest_tagname">@ndrejoao</p>
                 </div>
-                <Button content="Follow" class = "btn_follow" />
+        
+                <Button content="Follow"
+                        height="25%"
+                        kind="secondary"            
+                />  
+                
             </div>
             <p className="showmore">Show More</p>
         </article>

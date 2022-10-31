@@ -14,7 +14,6 @@ import "./styles/reset.sass"
 function App() {
 
   return (
-
     <BrowserRouter>
       <div className="App">
           <MenuLateral/>
@@ -29,7 +28,6 @@ function App() {
           <Footer/>
       </div>
     </BrowserRouter>
-    
   )
 }
 

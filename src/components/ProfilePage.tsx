@@ -10,9 +10,17 @@ function ProfilePage (){
             <section className="content_top_profile_header">
                 <Image src="../../public/images/profile/fotocapa.png" 
                     alt="foto de capa" className="image_capa_profile_page"/>
+
                 <Image src="../../public/images/profile/fotoperfil.png" 
                     alt="foto de perfil" className="image_profile_page"/>
-                <Button content="Edit profile" class="btn_profile_page"></Button>
+
+                <div className="btn_profile_page">
+                    <Button content = "Edit profile"
+                            height = "30px"
+                            maxWidth = "212px"
+                            kind="secondary"
+                    />
+                </div>
             </section>
 
             <section className="content_botton_header">

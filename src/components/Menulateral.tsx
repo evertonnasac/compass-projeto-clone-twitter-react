@@ -45,7 +45,14 @@ function MenuLateral (){
                <ItemMenu key={index} item = {option.name} urlIcon = {option.urlIcon}/>   
             )}
 
-            <Button content = {"Tweet"} class = "button_menuLateral"/>
+            <Button content = "Tweet"
+                    height = "30px"
+                    maxHeight = "50px"
+                    width =  "80%"
+                    maxWidth = "212px"
+                    kind="primary" 
+            />
+            
             <ProfileLateral/>
 
         </div>

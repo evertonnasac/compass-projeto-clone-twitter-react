@@ -27,6 +27,7 @@ let icons  = [
     }
 ]
 
+
 function AreaPost(){
     return(
         <section className="post">
@@ -47,14 +48,15 @@ function AreaPost(){
                 )}
                 </div>
 
-                <Button content = "Tweet" class="post_btn"  />
+                <Button content = "Tweet"
+                        height = "30px"
+                        width =  "20%"
+                        opacity = "0.5"
+                        kind="primary" 
+                />
             </div>
 
-           
-
         </section>
-            
-
        
     )
 }
