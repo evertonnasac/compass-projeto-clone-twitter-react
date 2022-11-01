@@ -1,18 +1,38 @@
 import Button from "./Button"
+import { Context } from "../utils/themeContext"
+import { useContext } from "react"
 
 import "../styles/components/footer.sass"
 
 function Footer (){
+
+    const {theme} = useContext(Context)
+
     return (
-        <footer>
-            <div className="footer_content_text">
+
+        <footer className={theme}>
+            <div className=" footer_content_text">
                 <p className="footer_title">Don't miss what's happening</p>
                 <p className="footer_subtitle">People on Twitter are the first to know</p>
             </div>
-            <Button content="Log in " class="btn_footer_login"/>
-            <Button content="Sign in " class="btn_footer_signup"/>
+            <div className="btn_footer_login">
+                <Button content="Log in "
+                    width="100px"
+                    height="100%"
+                    kind="primary"
+                /> 
+            </div>
+            <div className="btn_footer_signup">
+                <Button content="Sign in "
+                        width="100px"
+                        height="100%"
+                        kind="secondary"
+                />
+                </div>
+          
         </footer>
     )
+
 }
 
 export default Footer

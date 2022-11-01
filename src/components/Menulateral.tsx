@@ -1,7 +1,8 @@
 import Button from "../components/Button"
 import ItemMenu from "./ItemMenu"
 import ProfileLateral from "./ProfileLateral"
-import {Link} from "react-router-dom"
+import { Context } from "../utils/themeContext"
+import { useContext } from "react"
 
 import "../styles/components/menu_container.sass"
 
@@ -39,8 +40,11 @@ const itensMenu = [
 ]
 
 function MenuLateral (){
+
+    const {theme} = useContext(Context)
+
     return (
-        <div className="container_menuLateral">
+        <div className={theme + " container_menuLateral"}>
 
              <img src="../public/icons/menu/logo.png" alt="logo twitter" className="logo_menu"/>
 

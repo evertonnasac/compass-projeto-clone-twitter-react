@@ -1,8 +1,13 @@
 import Image from "./Image"
+import { Context } from "../utils/themeContext"
+import { useContext } from "react"
 
 import "../styles/components/tweets.sass"
 
 function Tweets (){
+
+    const {theme} = useContext(Context)
+
     return(
         <section className="tweets_container">
 
@@ -13,12 +18,12 @@ function Tweets (){
                 
                 <div className="tweet_content_info">
                     <div className="tweet_data">
-                        <p className="tweet_user">teste</p>
+                        <p className={theme + " tweet_user"}>teste</p>
                         <p className="tweet_tagname">@teste</p>
                         <p className="tweet_time">50</p>
                     </div>
 
-                    <div className="tweet_body">Lorem ipsum dolor sit amet consectetur 
+                    <div className={theme +" tweet_body"}>Lorem ipsum dolor sit amet consectetur 
                         adipisicing elit. Voluptatibus placeat eaque nobis totam perspiciatis 
                         nostrum. Dolor ducimus voluptatum mollitia necessitatibus architecto,
                         minima cupiditate cum? Non ab animi commodi veniam molestias.

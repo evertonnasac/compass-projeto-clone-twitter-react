@@ -1,15 +1,20 @@
 import Image from "./Image"
 import Button from "./Button"
+import { useContext } from "react"
+import { Context } from "../utils/themeContext"
 
 import "../styles/components/area_suggest_follow.sass"
 
 function SuggestFollow (){
+
+    const {theme} = useContext(Context)
+
     return(
         <article className="container_suggest">
-            <p className="who_suggest">Who to follow</p>
+            <p className={theme + " who_suggest"}>Who to follow</p>
             <div className="card_suggest">
                 <Image src ="" alt = "" className="suggest_image"/>
-                <div className="content_suggest_data">
+                <div className={theme + " content_suggest_data"}>
                     <p className="suggest_name">Andre Joao</p>
                     <p className="suggest_tagname">@ndrejoao</p>
                 </div>
