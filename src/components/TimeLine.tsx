@@ -12,6 +12,8 @@ function TimeLine (){
             <Header/>
             <AreaPost/>
             <Tweets/>
+            <Tweets/>
+            <Tweets/>
         </main>
     )
   

@@ -13,12 +13,32 @@ function ItemMenu  ({item, urlIcon}: ItemProps){
 
     const {theme} = useContext(Context)
 
-    return(
-        <div className="item_menu">
-            <img src={urlIcon} alt="incone" className="icon_menu" />
-            <p><Link to = "/profile" className={theme}>{item}</Link></p>
-        </div>
+    if(item == "Profile"){
+        return (
+            <div className="item_menu">
+                <img src={urlIcon} alt="incone" className="icon_menu" />
+                <p><Link to = "/profile" className={theme}>{item}</Link></p>
+            </div>
+        )
+    }
+    if(item == "Home"){
+        return (
+            <div className="item_menu">
+                <img src={urlIcon} alt="incone" className="icon_menu" />
+                <p><Link to = "/" className={theme}>{item}</Link></p>
+            </div>
+        )
+    }
+    else{
+        return (
+            <div className="item_menu">
+                <img src={urlIcon} alt="incone" className="icon_menu" />
+                <p><Link to = "/error" className={theme}>{item}</Link></p>
+            </div>
+        )
+    }
+   
 
-    )
+    
 }
 export default ItemMenu

@@ -13,7 +13,7 @@ function SuggestFollow (){
         <article className="container_suggest">
             <p className={theme + " who_suggest"}>Who to follow</p>
             <div className="card_suggest">
-                <Image src ="" alt = "" className="suggest_image"/>
+                <Image src ="../../public/images/profile/fotoperfil.png" alt = "" className="suggest_image"/>
                 <div className={theme + " content_suggest_data"}>
                     <p className="suggest_name">Andre Joao</p>
                     <p className="suggest_tagname">@ndrejoao</p>

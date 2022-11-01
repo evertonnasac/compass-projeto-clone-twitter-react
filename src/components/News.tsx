@@ -15,6 +15,7 @@ function News (){
             <Input type="search" placeholder="Search Twitter" className="search_news"/>
             <p className={theme +" whats"}>What's happening</p>
             <NewsCard/>
+            <NewsCard/>
         </section>
      
        

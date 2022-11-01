@@ -4,6 +4,8 @@ import News from "../components/News"
 import Footer from "../components/Footer"
 import SuggestFollow from "../components/SuggestFollow"
 import ProfilePage from "../components/ProfilePage"
+import Error from "./Error"
+
 import {Context } from "../utils/themeContext"
 import { useContext } from "react"
 import {Routes, Route} from  "react-router-dom"
@@ -19,6 +21,7 @@ function Main(){
                 <Routes>
                     <Route path="/" element = {<TimeLine/>} />
                     <Route path="/profile" element = {<ProfilePage/>} /> 
+                    <Route path="/error" element = {<Error/>} /> 
                 </Routes>
                 <aside className="news_follows">
                     <News/>

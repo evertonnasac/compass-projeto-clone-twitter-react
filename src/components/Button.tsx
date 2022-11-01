@@ -9,6 +9,7 @@ export interface buttonProps{ //extends InputHTMLAttributes<HTMLInputElement> {
     opacity?: string,
     border?: string,
     kind: string
+    onclick? : () => {}
 }
 
 const btnDefault  = {

@@ -1,10 +1,10 @@
 import {Meta, StoryObj} from "@storybook/react"
 import { Component } from "react"
 
-import ProfilePage from "../components/ProfilePage"
+import ProfilePageTop from "../components/ProfilePageTop"
 
 export default{
     title: "Components/Perfil",
-    component: ProfilePage
+    component: ProfilePageTop
 }
 export const Default = {}

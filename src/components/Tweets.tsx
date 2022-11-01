@@ -13,7 +13,7 @@ function Tweets (){
 
             <div className="tweet_card">
                 <div className="tweet_content_photo">
-                    <Image src="" className="photo_profile" alt="user"/>
+                    <Image src="../../public/images/profile/fotoperfil.png" className="tweet_photo_profile" alt="user"/>
                 </div>
                 
                 <div className="tweet_content_info">

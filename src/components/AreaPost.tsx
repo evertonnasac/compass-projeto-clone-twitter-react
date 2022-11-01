@@ -3,6 +3,8 @@ import Input from "./Input"
 import Button from "./Button"
 
 import "../styles/components/timeline_area_post.sass"
+import { useState } from "react"
+import handleTweet from "../utils/handleTweet"
 
 let icons  = [
     {
@@ -29,15 +31,25 @@ let icons  = [
 
 
 function AreaPost(){
+
+    const [tweet, setTweet] = useState("")
+
+    /*function handleTweet(e:Event){
+        setTweet(e.target.value)
+    }*/
+
     return(
         <section className="post">
             <div className="post_text">
-                <Image src="" alt= "" className = "image_profile" />
-
-                <Input type="text" 
+                <Image src="../../public/images/profile/fotoperfil.png" alt= "" className = "image_profile" />
+                <textarea
                     maxlength = "380" 
                     placeholder="What’s happening?"  
-                    className = "input_tweet" />
+                    className = "input_tweet" 
+                    >
+                    
+                </textarea>" 
+                    
             </div>
             
             <div className="post_options">
@@ -53,6 +65,7 @@ function AreaPost(){
                         width =  "20%"
                         opacity = "0.5"
                         kind="primary" 
+                        //onclick={handleTweet}
                 />
             </div>
 
