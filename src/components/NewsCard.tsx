@@ -22,7 +22,9 @@ function NewsCard (){
                     <p className="news_keywork">covid</p>
                     <p className="news_time">hoje</p>
                 </div>
-                <p className={theme + " news_title"}> Lorem ipsum dolor sit</p>
+                <p className={theme + " news_title"}> England’s Chief Medical 
+                                Officer says the UK is at the most dangerous time of the pandemic
+                                </p>
                 <p className="news_footer">Trends with <span>#{keyWork}</span></p>
             </section>
         </article>
