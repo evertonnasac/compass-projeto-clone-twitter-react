@@ -4,7 +4,7 @@ export interface buttonProps{ //extends InputHTMLAttributes<HTMLInputElement> {
     content: string,
     height: string,
     maxHeight?: string
-    width: string,
+    width?: string,
     maxWidth?: string,
     opacity?: string,
     border?: string,

@@ -1,5 +1,5 @@
 import {Meta, StoryObj} from "@storybook/react"
-import Button, {buttonPropos} from "../components/Button"
+import Button, {buttonProps} from "../components/Button"
 
 export default {
     title: "Components/Botão",
@@ -7,14 +7,18 @@ export default {
 
     args : {
         content : "Tweet",
-        class: "button_menuLateral"
+        height: "30px",
+        width: "200px",
+        kind: "primary"
+
     }
-}as Meta <buttonPropos>
+}as Meta <buttonProps>
 
 export const BotaoPrimario = {}
 
 export const BotaoSecundario = {
     args : {   
-        class : "btn_follow"
+        border: "1px solid #1DA1F2",
+        kind: "secondary"
     }
-}as Meta <buttonPropos>
+}as Meta <buttonProps>

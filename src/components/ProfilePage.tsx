@@ -23,7 +23,7 @@ function ProfilePage (){
                 </div>
             </section>
 
-            <section className="content_botton_header">
+            <section className="content_botton_profile_header">
                 <p className="name_profile_page">Davide Biscuso</p>
                 <p className="tagname_profile_page">@biscuttu</p>
                 <p className="bio_profile_page">Web Developer</p>
