@@ -41,6 +41,9 @@ const itensMenu = [
 function MenuLateral (){
     return (
         <div className="container_menuLateral">
+
+             <img src="../public/icons/menu/logo.png" alt="logo twitter" className="logo_menu"/>
+
             {itensMenu.map((option, index) =>
                <ItemMenu key={index} item = {option.name} urlIcon = {option.urlIcon}/>   
             )}
