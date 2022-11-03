@@ -3,14 +3,16 @@
     height: 100vh
 
     display: grid
-    grid-template-areas: "left main right" "footer footer footer" 
+
+    grid-template-areas: "_left _main _right" "_footer _footer _footer" 
     grid-template-columns: 1fr 2fr 1fr
-    grid-template-rows: 2fr 1fr
-    
+    grid-template-rows: 10fr 1fr
+
+   
 
     .left_container
+        grid-area: _left
         height: 100%
-        grid-area: left
 
         display: flex
         flex-direction: column
@@ -19,12 +21,17 @@
         padding-left: 5%
     
     .right_container
-        grid-area: right
+        grid-area: _right
+        height: 100%
 
     
     .main_container
-        grid-area: main
+        grid-area: _main
+        height: 100%
+        overflow: hidden
+
     
     .footer
-        grid-area: footer
+        grid-area: _footer
+        height: 100%
 

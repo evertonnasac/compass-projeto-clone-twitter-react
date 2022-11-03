@@ -10,8 +10,8 @@ function Footer (){
 
     return (
 
-        <footer className={theme}>
-            <div className=" footer_content_text">
+        <div className={"footer "+theme}>
+            <div className="footer_content_text">
                 <p className="footer_title">Don't miss what's happening</p>
                 <p className="footer_subtitle">People on Twitter are the first to know</p>
             </div>
@@ -30,7 +30,7 @@ function Footer (){
                 />
                 </div>
           
-        </footer>
+        </div>
     )
 
 }

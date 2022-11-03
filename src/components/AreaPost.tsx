@@ -34,8 +34,6 @@ function AreaPost(){
 
     const [tweet, setTweet] = useState("")
 
-  
-
     const handleMouseEvent = (e: MouseEvent) => {
         e.preventDefault();
         // Do something

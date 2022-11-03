@@ -8,13 +8,13 @@ import "../styles/components/timeline.sass"
 function TimeLine (){
 
     return(
-        <main className="main_content">
+        <div className="timeline_content">
             <Header/>
             <AreaPost/>
             <Tweets/>
             <Tweets/>
             <Tweets/>
-        </main>
+        </div>
     )
   
 }
