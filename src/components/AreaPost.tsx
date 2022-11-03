@@ -3,7 +3,7 @@ import Input from "./Input"
 import Button from "./Button"
 
 import "../styles/components/timeline_area_post.sass"
-import { useState } from "react"
+import React, { useState } from "react"
 import handleTweet from "../utils/handleTweet"
 
 let icons  = [
@@ -34,9 +34,12 @@ function AreaPost(){
 
     const [tweet, setTweet] = useState("")
 
-    /*function handleTweet(e:Event){
-        setTweet(e.target.value)
-    }*/
+  
+
+    const handleMouseEvent = (e: MouseEvent) => {
+        e.preventDefault();
+        // Do something
+    };
 
     return(
         <section className="post">
@@ -52,7 +55,7 @@ function AreaPost(){
                     
             </div>
             
-            <div className="post_options">
+            <div className="post_options" onClick={handleMouseEvent}>
                 <div className =  "post_icons_container">
 
                 {icons.map(({path, alt}, index) =>
@@ -65,7 +68,7 @@ function AreaPost(){
                         width =  "20%"
                         opacity = "0.5"
                         kind="primary" 
-                        //onclick={handleTweet}
+                        onclick={handleMouseEvent}
                 />
             </div>
 

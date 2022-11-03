@@ -9,13 +9,11 @@ import { ThemeContext, Context } from "./utils/themeContext"
 import { useContext } from "react"
 import {BrowserRouter, Routes, Route} from  "react-router-dom"
 
-import  "./styles/main.sass"
+import  "./styles/app.sass"
 import "./styles/reset.sass"
 
 
 function App() {
-
-  const {theme} = useContext(Context)
 
   return (
     <BrowserRouter>

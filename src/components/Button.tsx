@@ -8,8 +8,8 @@ export interface buttonProps{ //extends InputHTMLAttributes<HTMLInputElement> {
     maxWidth?: string,
     opacity?: string,
     border?: string,
-    kind: string
-    onclick? : () => {}
+    kind: string,
+    onclick? : (e: MouseEvent) => {}
 }
 
 const btnDefault  = {
@@ -37,21 +37,6 @@ const btnSecondary = {
 }
 
 function Button(props : buttonProps){
-    const ButtonKind = {
-        primary:   <button style={{
-                        ...btnPrimary,
-                        width: props.width,
-                        height: props.height,
-                        opacity: props.opacity || 1
-                    }}>{props.content}</button>,
-
-        secondary : <button style={{
-                        ...btnPrimary,
-                        width: props.width,
-                        height: props.height,
-                        opacity: props.opacity || 1
-                    }}>{props.content}</button>
-    }
     
     if(props.kind == "primary"){
         return  <button style={{

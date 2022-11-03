@@ -1,0 +1,22 @@
+.main
+    width: 100vw
+    right: 100vh
+
+    display: grid
+    grid-template-areas: "left main right" "footer footer footer" 
+    grid-template-columns: 1fr 2fr 1fr
+    grid-template-rows: 2fr 1fr
+    
+
+    .left_container
+        grid-area: left
+    
+    .right_container
+        grid-area: right
+    
+    .main_container
+        grid-area: main
+    
+    .footer
+        grid-area: footer
+
