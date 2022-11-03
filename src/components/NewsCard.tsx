@@ -14,7 +14,9 @@ function NewsCard (){
     return(
         <article className="news_card">
             <aside className="news_content_image">
-                <Image src = "../../public/images/profile/covid.jpg" alt ="imagem" className="news_image"/>
+                <img src = "../../public/images/profile/covid.jpg" 
+                       alt ="imagem" 
+                       className="news_image"/>
             </aside>
 
             <section className="news_container_main">

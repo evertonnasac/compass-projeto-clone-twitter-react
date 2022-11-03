@@ -13,7 +13,7 @@ function Tweets (){
 
             <div className="tweet_card">
                 <div className="tweet_content_photo">
-                    <Image src="../../public/images/profile/fotoperfil.png" className="tweet_photo_profile" alt="user"/>
+                    <img src="../../public/images/profile/fotoperfil.png" className="tweet_photo_profile" alt="user"/>
                 </div>
                 
                 <div className="tweet_content_info">
@@ -31,19 +31,27 @@ function Tweets (){
                     
                     <div className="tweet_actions">
                         <div className="action">
-                            <Image src="../../public/icons/action-posts/comment.png" className="post_icon" alt ="comentar"/>
+                            <img src="../../public/icons/action-posts/comment.png" 
+                                 className="post_icon"
+                                 alt ="comentar"/>
                             <p className="number"></p>
                         </div>
                         <div className="action">
-                            <Image src="../../public/icons/action-posts/retweet.png" className="post_icon" alt ="retweetar" />
+                            <img src="../../public/icons/action-posts/retweet.png" 
+                                 className="post_icon" 
+                                 alt ="retweetar" />
                             <p className="number"></p>
                         </div>
                         <div className="action">
-                            <Image src="../../public/icons/action-posts/like.png" className="post_icon" alt="curtir" />
+                            <img src="../../public/icons/action-posts/like.png" 
+                                 className="post_icon" 
+                                 alt="curtir" />
                             <p className="number"></p>
                         </div>
                         <div className="action">
-                            <Image src="../../public/icons/action-posts/share.png" className="post_icon" alt="compartilhar"  />
+                            <img src="../../public/icons/action-posts/share.png" 
+                                 className="post_icon" 
+                                 alt="compartilhar"  />
                             <p className="number"></p>
                         </div>
                     </div>

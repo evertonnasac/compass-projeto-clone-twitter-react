@@ -1,9 +1,9 @@
-import Image from "./Image"
-import Button from "./Button"
+
+import SuggestFollowCard from "./SuggestFollowCard"
 import { useContext } from "react"
 import { Context } from "../utils/themeContext"
 
-import "../styles/components/area_suggest_follow.sass"
+import "../styles/components/suggest_follow.sass"
 
 function SuggestFollow (){
 
@@ -12,19 +12,8 @@ function SuggestFollow (){
     return(
         <article className="container_suggest">
             <p className={theme + " who_suggest"}>Who to follow</p>
-            <div className="card_suggest">
-                <Image src ="../../public/images/profile/fotoperfil.png" alt = "" className="suggest_image"/>
-                <div className={theme + " content_suggest_data"}>
-                    <p className="suggest_name">Andre Joao</p>
-                    <p className="suggest_tagname">@ndrejoao</p>
-                </div>
-        
-                <Button content="Follow"
-                        height="25%"
-                        kind="secondary"            
-                />  
-                
-            </div>
+            <SuggestFollowCard/>
+            <SuggestFollowCard/>
             <p className="showmore">Show More</p>
         </article>
     )

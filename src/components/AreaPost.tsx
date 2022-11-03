@@ -42,23 +42,26 @@ function AreaPost(){
     return(
         <section className="post">
             <div className="post_text">
-                <Image src="../../public/images/profile/fotoperfil.png" alt= "" className = "image_profile" />
+                <img src="../../public/images/profile/fotoperfil.png" 
+                    alt= "Foto de perfil" 
+                    className = "image_profile" />
                 <textarea
                     maxlength = "380" 
-                    placeholder="What’s happening?"  
+                    placeholder="What’s happening?" 
                     className = "input_tweet" 
-                    >
-                    
-                </textarea>" 
-                    
+                    >  
+                </textarea>
             </div>
             
             <div className="post_options" onClick={handleMouseEvent}>
                 <div className =  "post_icons_container">
 
-                {icons.map(({path, alt}, index) =>
-                    <Image  key = {index} src = {path} className = "post_icons" alt = {alt} />
-                )}
+                    {icons.map(({path, alt}, index) =>
+                        <img  key = {index} 
+                            src = {path} 
+                            className = "post_icons" 
+                            alt = {alt} />
+                        )}
                 </div>
 
                 <Button content = "Tweet"
@@ -69,7 +72,6 @@ function AreaPost(){
                         onclick={handleMouseEvent}
                 />
             </div>
-
         </section>
        
     )

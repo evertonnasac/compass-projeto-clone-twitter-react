@@ -1,0 +1,35 @@
+@use "../root"
+
+.card_suggest
+    width: 100%
+    height: 100%
+    display: flex
+    justify-content: space-between
+    align-items: center
+
+    .suggest_image
+        width: 20%
+        height: 50%
+        border-radius: 100%
+
+    .content_suggest_data
+
+        .suggest_name
+            font-weight: 700
+            font-weight: root.$font_size-md2
+        
+        .suggest_tagname
+            color: root.$color_dark5
+            font-size: root.$font_size-md2
+            font-weight: 500
+        
+    .btn_follow
+            @include root.buttonPattern()
+            background-color: root.$color_white
+            color: root.$color_blue_principal
+            border: 1px solid root.$color_blue_principal
+
+            height: 30%
+            border-radius: 100px
+
+    

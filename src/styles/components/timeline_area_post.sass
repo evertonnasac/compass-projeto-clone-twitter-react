@@ -8,6 +8,7 @@
     flex-direction: column
     justify-content: space-between
 
+
     margin: 0 auto
 
     .post_text
@@ -29,16 +30,17 @@
             color: root.$color_dark5
 
     .post_options
-
+        width: 80%
         height: 45%
+        align-self: flex-end
         display: flex
         justify-content: space-between
-
+        align-items: center
 
         .post_icons_container
-        
+
             .post_icons
-                    margin-right: 10px
+                 margin-right: 10px
 
         .post_btn
             @include root.buttonPattern()
