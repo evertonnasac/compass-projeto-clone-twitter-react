@@ -1,6 +1,6 @@
 .main
     width: 100vw
-    right: 100vh
+    height: 100vh
 
     display: grid
     grid-template-areas: "left main right" "footer footer footer" 
@@ -9,10 +9,18 @@
     
 
     .left_container
+        height: 100%
         grid-area: left
+
+        display: flex
+        flex-direction: column
+        justify-content: space-between
+
+        padding-left: 5%
     
     .right_container
         grid-area: right
+
     
     .main_container
         grid-area: main

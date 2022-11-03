@@ -44,12 +44,12 @@ function MenuLateral (){
     const {theme} = useContext(Context)
 
     return (
-        <div className={theme + " container_menuLateral"}>
+        <div className={theme + " container_menu_lateral"}>
 
-             <img src="../public/icons/menu/logo.png" alt="logo twitter" className="logo_menu"/>
+            <img src="../public/icons/menu/logo.png" alt="logo twitter" className="logo_menu"/>
 
             {itensMenu.map((option, index) =>
-               <ItemMenu key={index} item = {option.name} urlIcon = {option.urlIcon}/>   
+            <ItemMenu key={index} item = {option.name} urlIcon = {option.urlIcon}/>   
             )}
 
             <Button content = "Tweet"
@@ -59,9 +59,6 @@ function MenuLateral (){
                     maxWidth = "212px"
                     kind="primary" 
             />
-            
-            <ProfileLateral/>
-
         </div>
         
        
