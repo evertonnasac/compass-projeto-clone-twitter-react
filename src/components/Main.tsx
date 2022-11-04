@@ -6,6 +6,7 @@ import SuggestFollow from "../components/SuggestFollow"
 import ProfilePage from "../components/ProfilePage"
 import Error from "./Error"
 import ProfileLateral from "./ProfileLateral"
+import NewsSearch from "./NewsSearch"
 
 import {Context } from "../utils/themeContext"
 import { useContext } from "react"
@@ -23,21 +24,21 @@ function Main(){
                 <MenuLateral/>
                 <ProfileLateral/>
             </aside>
-            <main className="main_container">
+            <main className={theme + " main_container"}>
                 <Routes>
                     <Route path="/" element = {<TimeLine/>} />
                     <Route path="/profile" element = {<ProfilePage/>} /> 
                     <Route path="/error" element = {<Error/>} /> 
                 </Routes>
             </main > 
-            <article className="right_container">
+            <article className= {theme +" right_container"}>
+                <NewsSearch/>
                 <News/>
                 <SuggestFollow/>
             </article>
             <footer className="footer">
               <Footer/>
-            </footer>
-            
+            </footer> 
         </div>
     )
 }

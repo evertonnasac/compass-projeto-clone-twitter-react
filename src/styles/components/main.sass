@@ -1,3 +1,12 @@
+@use "../root"
+
+
+.main.light
+     background-color: root.$color_white
+
+.main.dark
+    background-color: root.$color_dark2
+
 .main
     width: 100vw
     height: 100vh
@@ -5,10 +14,9 @@
     display: grid
 
     grid-template-areas: "_left _main _right" "_footer _footer _footer" 
-    grid-template-columns: 1.1fr 1.8fr 1.1fr
+    grid-template-columns: 0.9fr 1.9fr 1.2fr
     grid-template-rows: 10fr 1fr
 
-   
 
     .left_container
         grid-area: _left
@@ -19,7 +27,8 @@
         justify-content: space-between
 
         padding-left: 5%
-    
+
+
     .right_container
         grid-area: _right
         height: 100%
@@ -27,21 +36,29 @@
         display: flex
         flex-direction: column
         justify-content: space-between
+        box-sizing: border-box
+        padding: 2% 5% 2% 3%
     
-        padding: 0 5% 0 3%
+    .main_container.light
+        border-left: 1px solid root.$color_border_light
+        border-right: 1px solid root.$color_border_light
     
-    
+    .main_container.dark
+        border-left: 1px solid root.$color_dark4
+        border-right: 1px solid root.$color_dark4
+
     .main_container
         grid-area: _main
         height: 100%
         overflow: hidden
-
-        background-color: #F7F9FA
-        border-left: 1px solid #EBEEF0
-        border-right: 1px solid #EBEEF0
-
     
     .footer
         grid-area: _footer
         height: 100%
+
+
+    
+::-webkit-scrollbar 
+  width: 0px
+  height: 0px
 

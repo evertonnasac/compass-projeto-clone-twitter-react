@@ -9,10 +9,26 @@ interface ItemProps {
     urlIcon : string
 }
 
+
+const routesMenu  = {
+    Profile: "/profile",
+    Home: "/"
+} 
+
+
 function ItemMenu  ({item, urlIcon}: ItemProps){
 
     const {theme} = useContext(Context)
 
+    /*let path : string = routesMenu[item] || "/error"
+
+    return(
+        <div className="item_menu">
+                <img src={urlIcon} alt="incone" className="icon_menu" />
+                <p><Link to = {path} className={theme}>{item}</Link></p>
+        </div>
+    )
+*/
     if(item == "Profile"){
         return (
             <div className="item_menu">

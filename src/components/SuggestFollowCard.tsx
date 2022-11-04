@@ -9,7 +9,7 @@ function SuggestFollowCard(){
     const {theme} = useContext(Context)
 
     return(
-        <div className="card_suggest">
+        <div className={theme + " card_suggest"}>
             <img src ="../../public/images/profile/fotoperfil.png" 
                 alt = "" 
                 className="suggest_image"/>

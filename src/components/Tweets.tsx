@@ -9,7 +9,7 @@ function Tweets (){
     const {theme} = useContext(Context)
 
     return(
-        <section className="tweets_container">
+        <section className={theme +" tweets_container"}>
 
             <div className="tweet_card">
                 <div className="tweet_content_photo">

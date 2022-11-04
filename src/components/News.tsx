@@ -5,14 +5,13 @@ import { Context } from "../utils/themeContext"
 
 import "../styles/components/news.sass"
 
+
 function News (){
 
     const {theme} = useContext(Context)
 
     return (
-      
-        <section className="container_news">
-            <Input type="search" placeholder="Search Twitter" className="search_news"/>
+        <section className={theme + " container_news"}>
             <p className={theme +" whats"}>What's happening</p>
             <NewsCard/>
             <NewsCard/>

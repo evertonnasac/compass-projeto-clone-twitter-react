@@ -1,22 +1,24 @@
 @use "../root"
 
+
+.container_news.dark
+    background-color: root.$color_dark3
+
+.container_news.light
+    background-color: #F7F9FA
+  
+
 .container_news
     width: 100%
-    height: 60%
+    height: 50%
     display: flex
     flex-direction: column
     justify-content: space-evenly
+    border-radius: 16px
 
-    background-color: #F7F9FA
+    box-sizing: border-box
+    padding: 2%
 
-    .search_news
-
-        height: 30px
-        border: none
-        border-radius: 50px
-        background-color: #EBEEF0
-
-        padding-left: 10px
 
 .whats
     font-size: root.$font_size-lg

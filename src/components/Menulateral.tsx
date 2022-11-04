@@ -9,32 +9,40 @@ import "../styles/components/menu_container.sass"
 const itensMenu = [
     {
         name:"Home",
-        urlIcon : "../../public/icons/menu/home.png",
+        urlIconLight : "../../public/icons/menu/home.png",
+        urlIconDark : "../../public/icons/menu/home.png",
     },
 
     {
         name: "Explorer",
-        urlIcon : "../../public/icons/menu/explore.png",
+        urlIconLight : "../../public/icons/menu/explore_light.png",
+        urlIconDark : "../../public/icons/menu/explore_dark.png",
+        
     },
     {
         name: "Notifications",
-        urlIcon : "../../public/icons/menu/notifications.png",
+        urlIconLight : "../../public/icons/menu/notifications_light.png",
+        urlIconDark : "../../public/icons/menu/notifications_dark.png",
     },
     {
         name:  "Messages",
-        urlIcon : "../../public/icons/menu/messages.png"
+        urlIconLight : "../../public/icons/menu/messages_light.png",
+        urlIconDark : "../../public/icons/menu/messages_dark.png",
     },
     {
         name: "Lists",
-        urlIcon : "../../public/icons/menu/lists.png"
+        urlIconLight : "../../public/icons/menu/lists_light.png",
+        urlIconDark : "../../public/icons/menu/lists_dark.png",
     },
     {
         name: "Profile",
-        urlIcon : "../../public/icons/menu/profile.png"
+        urlIconLight : "../../public/icons/menu/profile_light.png",
+        urlIconDark : "../../public/icons/menu/profile_dark.png",
     },
     {
         name: "More",
-        urlIcon : "../../public/icons/menu/more.png"
+        urlIconLight : "../../public/icons/menu/more_light.png",
+        urlIconDark : "../../public/icons/menu/more_dark.png",
     }
 
 ]
@@ -43,13 +51,23 @@ function MenuLateral (){
 
     const {theme} = useContext(Context)
 
+    
+
     return (
         <div className={theme + " container_menu_lateral"}>
 
             <img src="../public/icons/menu/logo.png" alt="logo twitter" className="logo_menu"/>
 
-            {itensMenu.map((option, index) =>
-            <ItemMenu key={index} item = {option.name} urlIcon = {option.urlIcon}/>   
+            {itensMenu.map((option, index) =>{
+
+                let url : string
+
+                theme == "dark"? url = option.urlIconDark : url = option.urlIconLight
+
+                return <ItemMenu key={index} item = {option.name} urlIcon = {url}/>
+                
+                }
+                  
             )}
 
             <Button content = "Tweet"

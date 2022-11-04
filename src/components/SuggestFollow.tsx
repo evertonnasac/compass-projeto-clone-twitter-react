@@ -2,6 +2,7 @@
 import SuggestFollowCard from "./SuggestFollowCard"
 import { useContext } from "react"
 import { Context } from "../utils/themeContext"
+import { Link } from "react-router-dom"
 
 import "../styles/components/suggest_follow.sass"
 
@@ -10,11 +11,11 @@ function SuggestFollow (){
     const {theme} = useContext(Context)
 
     return(
-        <article className="container_suggest">
+        <article className={theme + " container_suggest"}>
             <p className={theme + " who_suggest"}>Who to follow</p>
             <SuggestFollowCard/>
             <SuggestFollowCard/>
-            <p className="showmore">Show More</p>
+            <Link to = "/error"><p className="showmore">Show More</p></Link>
         </article>
     )
 }

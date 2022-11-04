@@ -1,9 +1,21 @@
+@use "../root"
+
+.header.dark
+    border-bottom:  1px solid root.$color_dark4
+
+.header.light
+    border-bottom: 1px solid root.$color_border_light
+
 .header
     width: 100%
     height: 10%
     display: flex
     justify-content: space-between
     align-items: center
+
+    box-sizing: border-box
+    padding: 1% 3%
+
 
     .btn_theme
         cursor: pointer

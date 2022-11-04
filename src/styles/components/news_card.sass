@@ -1,5 +1,11 @@
 @use "../root"
 
+.news_card.dark
+    border-top: 1px solid root.$color_dark4
+
+.news_card.light
+    border-top: 1px solid root.$color_border_light
+
 .news_card
     width: 100%
 
@@ -7,13 +13,8 @@
     flex-direction: row-reverse
     justify-content: space-between
     align-items: center
-
     
-    border: 1px solid #EBEEF0
-
-    padding: 1%
-    box-sizing: border-box
-
+    
     .news_content_image
         width: 30%
         height: 70%
@@ -21,6 +22,7 @@
         img
             width: 100%
             height: 100%
+            border-radius: 16px
     
     .news_container_main
         width: 95%

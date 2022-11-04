@@ -1,6 +1,7 @@
-import Image from "./Image"
-import Input from "./Input"
+
 import Button from "./Button"
+import { Context } from "../utils/themeContext"
+import { useContext } from "react"
 
 import "../styles/components/timeline_area_post.sass"
 import React, { useState } from "react"
@@ -33,6 +34,7 @@ let icons  = [
 function AreaPost(){
 
     const [tweet, setTweet] = useState("")
+    const {theme} = useContext(Context)
 
     const handleMouseEvent = (e: MouseEvent) => {
         e.preventDefault();
@@ -40,7 +42,7 @@ function AreaPost(){
     };
 
     return(
-        <section className="post">
+        <section className= {theme +" post"}>
             <div className="post_text">
                 <img src="../../public/images/profile/fotoperfil.png" 
                     alt= "Foto de perfil" 

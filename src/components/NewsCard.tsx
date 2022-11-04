@@ -12,7 +12,7 @@ function NewsCard (){
     const {theme} = useContext(Context)
 
     return(
-        <article className="news_card">
+        <article className={theme + " news_card"}>
             <aside className="news_content_image">
                 <img src = "../../public/images/profile/covid.jpg" 
                        alt ="imagem" 

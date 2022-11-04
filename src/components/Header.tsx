@@ -9,11 +9,10 @@ function Header (){
    function handleTheme(){
         theme == "light"?
         setTheme("dark") : setTheme("light")
-        console.log(theme) 
    }
 
     return(
-        <header className="header">
+        <header className={theme +" header"}>
             <p className="home_header">Home</p>
             <img src="../public/icons/menu/btn_theme.png" 
                 alt="Trocar tema" 
