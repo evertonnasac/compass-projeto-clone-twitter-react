@@ -9,7 +9,7 @@ function TimeLine (){
 
     return(
         <div className="timeline_content">
-            <Header/>
+            <Header screen = "Home"/>
             <AreaPost/>
             <Tweets/>
             <Tweets/>

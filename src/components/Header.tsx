@@ -2,7 +2,11 @@ import { useContext, useState } from "react"
 import { Context } from "../utils/themeContext"
 import "../styles/components/header.sass"
 
-function Header (){
+interface HeaderProps {
+    screen: string
+}
+
+function Header (title: HeaderProps){
 
    const {theme, setTheme} = useContext(Context)
 
@@ -13,7 +17,7 @@ function Header (){
 
     return(
         <header className={theme +" header"}>
-            <p className="home_header">Home</p>
+            <p className="home_header">{title.screen}</p>
             <img src="../public/icons/menu/btn_theme.png" 
                 alt="Trocar tema" 
                 className="btn_theme"

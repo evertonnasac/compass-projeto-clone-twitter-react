@@ -8,7 +8,7 @@ import "../styles/components/profile_page.sass"
 function ProfilePage (){
     return(
         <div className="container_profile">
-            <Header/>
+            <Header screen="Profile"/>
             <ProfilePageTop/>
             <Tabbar/>
             <Tweets/>
