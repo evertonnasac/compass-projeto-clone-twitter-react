@@ -8,7 +8,7 @@ import Error from "./Error"
 import ProfileLateral from "./ProfileLateral"
 import NewsSearch from "./NewsSearch"
 
-import {Context } from "../utils/themeContext"
+import {Context } from "../context/themeContext"
 import { useContext } from "react"
 import {Routes, Route} from  "react-router-dom"
 

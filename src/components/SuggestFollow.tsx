@@ -1,7 +1,7 @@
 
 import SuggestFollowCard from "./SuggestFollowCard"
 import { useContext } from "react"
-import { Context } from "../utils/themeContext"
+import { Context } from "../context/themeContext"
 import { Link } from "react-router-dom"
 
 import "../styles/components/suggest_follow.sass"

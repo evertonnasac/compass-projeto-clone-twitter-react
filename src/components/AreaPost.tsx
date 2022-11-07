@@ -1,11 +1,11 @@
 
 import Button from "./Button"
-import { Context } from "../utils/themeContext"
+import { Context } from "../context/themeContext"
 import { useContext } from "react"
 
 import "../styles/components/timeline_area_post.sass"
 import React, { useState } from "react"
-import handleTweet from "../utils/handleTweet"
+import handleTweet from "../controllers/tweet-controller"
 
 let icons  = [
     {

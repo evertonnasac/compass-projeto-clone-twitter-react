@@ -1,7 +1,7 @@
 
 import Button from "./Button"
 import { useContext } from "react"
-import { Context } from "../utils/themeContext"
+import { Context } from "../context/themeContext"
 
 import "../styles/components/profile_page_top.sass"
 
