@@ -5,7 +5,7 @@ import { useContext } from "react"
 
 import "../styles/components/timeline_area_post.sass"
 import React, { useState } from "react"
-import handleTweet from "../controllers/tweet-controller"
+import tweetController from "../controllers/tweet-controller"
 
 let icons  = [
     {
@@ -33,13 +33,20 @@ let icons  = [
 
 function AreaPost(){
 
+
     const [tweet, setTweet] = useState("")
     const {theme} = useContext(Context)
 
-    const handleMouseEvent = (e: MouseEvent) => {
-        e.preventDefault();
-        // Do something
-    };
+    function handleTweet(e : any){
+        setTweet(e.target.value)
+        console.log(tweet)
+    }
+
+    function saveTweet(){
+        console.log("teste")
+        tweetController.createTweet(tweet, "450")
+    }
+
 
     return(
         <section className= {theme +" post"}>
@@ -51,11 +58,12 @@ function AreaPost(){
                     maxlength = "380" 
                     placeholder="What’s happening?" 
                     className = "input_tweet" 
+                    onChange={handleTweet}
                     >  
                 </textarea>
             </div>
             
-            <div className="post_options" onClick={handleMouseEvent}>
+            <div className="post_options">
                 <div className =  "post_icons_container">
 
                     {icons.map(({path, alt}, index) =>
@@ -71,7 +79,7 @@ function AreaPost(){
                         width =  "20%"
                         opacity = "0.5"
                         kind="primary" 
-                        onclick={handleMouseEvent}
+                        onClick={saveTweet}
                 />
             </div>
         </section>

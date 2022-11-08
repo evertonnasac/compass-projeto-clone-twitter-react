@@ -9,7 +9,7 @@ export interface buttonProps{ //extends InputHTMLAttributes<HTMLInputElement> {
     opacity?: string,
     border?: string,
     kind: string,
-    onclick? : (e: MouseEvent) => {}
+    onClick?(e: any): void
 }
 
 const btnDefault  = {
@@ -39,21 +39,29 @@ const btnSecondary = {
 function Button(props : buttonProps){
     
     if(props.kind == "primary"){
-        return  <button style={{
-                    ...btnPrimary,
-                    width: props.width,
-                    height: props.height,
-                    opacity: props.opacity || 1
-                }}>{props.content}</button>
+        return  <button 
+                    onClick={props.onClick}
+                    style={{
+                        ...btnPrimary,
+                        width: props.width,
+                        height: props.height,
+                        opacity: props.opacity || 1
+                    }}>
+                    {props.content}
+                </button>
     }
 
     else if(props.kind == "secondary"){
-            return <button style={{
-                    ...btnSecondary,
-                    width: props.width,
-                    height: props.height,
-                    opacity: props.opacity || 1
-                }}>{props.content}</button>
+            return <button 
+                        onClick={props.onClick}
+                        style = {{
+                            ...btnSecondary,
+                            width: props.width,
+                            height: props.height,
+                            opacity: props.opacity || 1
+                        }}>
+                        {props.content}
+                    </button>
 }
 
     else{

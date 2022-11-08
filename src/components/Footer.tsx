@@ -8,6 +8,7 @@ function Footer (){
 
     const {theme} = useContext(Context)
 
+
     return (
 
         <div className={"footer "+theme}>

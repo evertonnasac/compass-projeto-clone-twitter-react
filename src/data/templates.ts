@@ -5,13 +5,18 @@ export interface Tweet  {
     likes: number 
     comments : Comments[]
     photo? : string
+    time: string
 }
 
 export interface User {
     id_user: string
-    name: string
+    name: string,
+    tagName: string
+    photo: string
     followers : string[]
     followings : string[]
+    email: string,
+    password: string
 }
 
 

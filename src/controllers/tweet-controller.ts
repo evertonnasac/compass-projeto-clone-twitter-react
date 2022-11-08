@@ -8,7 +8,8 @@ function createTweet (text: string, idAuthor:string){
         text: text,
         id_tweet : "4585",
         comments : [],
-        likes: 0
+        likes: 0,
+        time: "000"
     }
     saveTweet(tweet)
 }
