@@ -1,9 +1,9 @@
 function SelectMouth (){
     return(
         <span>
-            <label htmlFor="month">Month:</label>
             <select id="month" name="month">
-                <option selected>January</option>
+            <option selected>Month</option>
+                <option >January</option>
                 <option>February</option>
                 <option>March</option>
                 <option>April</option>

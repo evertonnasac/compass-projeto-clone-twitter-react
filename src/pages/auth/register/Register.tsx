@@ -1,15 +1,49 @@
 import LogoTwitter from "../../../components/LogoTwitter"
 import SelectMouth from "./SelectMouth"
 import Button from "../../../components/Button"
+import { useState } from "react"
+
+import "../../../styles/register/register.sass"
 
 function Register (){
+
+    const [typeInput, setTypeInput] = useState("phone")
+
+    let Input : any
+    let label : string = ""
+
+    function toogleTypeInput(e : any){
+        typeInput == "phone" ? setTypeInput("email") : setTypeInput("phone")
+    }
+
+    if(typeInput == "phone"){
+        Input =  <input type="number" 
+                name="phone_user " 
+                className="register_phone input" 
+                placeholder="Phone" />
+
+        label = "Use Phone"
+    }
+
+    else if (typeInput == "email"){
+        Input = <input type="email" 
+                name="email_user " 
+                className="register_email input" 
+                placeholder="Email" />
+
+        label = "Use Email"
+    }
+    
+
     return(
         <section  className="register">
             <LogoTwitter className="logo_register"/>
-            <input type="text" className="register_text" name = "name_user" />
-            <input type="number" name="phone_user" className="register_phone" />
-            <input type="email" name="phone_user" className="register_email" />
-            <p className="toogle_auth">Use Email</p>
+            <p className="register_title">Create Account</p>
+            <input type="text" className="register_name input" name = "name_user" placeholder="Name"/>
+
+            {Input}
+
+            <a className="toogle_input" onClick={toogleTypeInput}>{label}</a>
             <p className="date_birth">Date of birth</p>
             <p className="warnig_birth">
                 Facilisi sem pulvinar velit nunc, 
@@ -20,15 +54,15 @@ function Register (){
             </p>
             <div className="register_container_birth">
                 <SelectMouth/>
-                <input type="number" name="register_mouth" placeholder="Day" min={0} max={31} />
-                <input type="number" name="register_year" placeholder="Year"/>
-                <Button
-                    content="Next"
-                    height="200px"
-                    width="80%"
-                    kind="principal"
-                />
+                <input type="number" name="register_mouth" placeholder="Day" min={0} max={31} className="day" />
+                <input type="number" name="register_year" placeholder="Year" className="year"/>
             </div>
+            <Button
+                content="Next"
+                height="7%"
+                width="100%"
+                kind="primary"
+            />
             
 
         </section>
