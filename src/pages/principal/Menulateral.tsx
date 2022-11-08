@@ -4,7 +4,7 @@ import ProfileLateral from "./ProfileLateral"
 import { Context } from "../../context/themeContext"
 import { useContext } from "react"
 
-import "../styles/components/menu_container.sass"
+import "../../styles/components/menu_container.sass"
 
 const itensMenu = [
     {
@@ -47,11 +47,13 @@ const itensMenu = [
 
 ]
 
-function MenuLateral (){
+interface propsMenu{
+    setAba(e: any): void
+}
+
+function MenuLateral (props : propsMenu){
 
     const {theme} = useContext(Context)
-
-    
 
     return (
         <div className={theme + " container_menu_lateral"}>
@@ -64,7 +66,8 @@ function MenuLateral (){
 
                 theme == "dark"? url = option.urlIconDark : url = option.urlIconLight
 
-                return <ItemMenu key={index} item = {option.name} urlIcon = {url}/>
+                
+                return <ItemMenu setAba={props.setAba} key={index} item = {option.name} urlIcon = {url}/>
                 
                 }
                   

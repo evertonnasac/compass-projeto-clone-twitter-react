@@ -1,8 +1,9 @@
 import AreaPost from "./AreaPost";
 import Tweets from "./Tweets";
 import Header from "./Header";
+import { useState } from "react";
 
-import "../styles/components/timeline.sass"
+import "../../styles/components/timeline.sass"
 
 
 function TimeLine (){

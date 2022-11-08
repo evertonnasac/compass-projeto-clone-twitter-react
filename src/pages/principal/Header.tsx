@@ -1,6 +1,6 @@
 import { useContext, useState } from "react"
 import { Context } from "../../context/themeContext"
-import "../styles/components/header.sass"
+import "../../styles/components/header.sass"
 
 interface HeaderProps {
     screen: string

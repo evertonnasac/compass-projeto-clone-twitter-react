@@ -1,13 +1,14 @@
 import Button from "./Button"
 import { Context } from "../context/themeContext"
 import { useContext } from "react"
+import { useNavigate } from "react-router-dom"
 
 import "../styles/components/footer.sass"
 
 function Footer (){
 
     const {theme} = useContext(Context)
-
+    const navigate = useNavigate()
 
     return (
 
@@ -28,6 +29,7 @@ function Footer (){
                         width="100px"
                         height="100%"
                         kind="secondary"
+                        onClick={(e: any) => {navigate("/register")}}
                 />
                 </div>
           

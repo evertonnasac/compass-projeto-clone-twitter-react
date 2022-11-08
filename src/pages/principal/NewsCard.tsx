@@ -2,7 +2,7 @@
 import { Context } from "../../context/themeContext"
 import { useContext } from "react"
 
-import "../styles/components/news_card.sass"
+import "../../styles/components/news_card.sass"
 
 
 let keyWork: string = "covid"

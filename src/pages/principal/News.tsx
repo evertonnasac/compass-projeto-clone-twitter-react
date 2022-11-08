@@ -3,7 +3,7 @@ import NewsCard from "./NewsCard"
 import { useContext } from "react"
 import { Context } from "../../context/themeContext"
 
-import "../styles/components/news.sass"
+import "../../styles/components/news.sass"
 
 
 function News (){

@@ -1,4 +1,4 @@
-import "../styles/components/tabbar.sass"
+import "../../styles/components/tabbar.sass"
 
 function Tabbar (){
     return(

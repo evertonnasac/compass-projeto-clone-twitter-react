@@ -2,7 +2,7 @@ import Button from "../../components/Button"
 import { useContext } from "react"
 import { Context } from "../../context/themeContext"
 
-import "../styles/components/suggest_follow_card.sass"
+import "../../styles/components/suggest_follow_card.sass"
 
 function SuggestFollowCard(){
 

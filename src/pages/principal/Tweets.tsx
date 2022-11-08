@@ -2,7 +2,7 @@
 import { Context } from "../../context/themeContext"
 import { useContext } from "react"
 
-import "../styles/components/tweets.sass"
+import "../../styles/components/tweets.sass"
 
 function Tweets (){
 

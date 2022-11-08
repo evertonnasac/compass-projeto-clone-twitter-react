@@ -3,7 +3,7 @@ import Button from "../../components/Button"
 import { useContext } from "react"
 import { Context } from "../../context/themeContext"
 
-import "../styles/components/profile_page_top.sass"
+import "../../styles/components/profile_page_top.sass"
 
 function ProfilePageTop(){
 

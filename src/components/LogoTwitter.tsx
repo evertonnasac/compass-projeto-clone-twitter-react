@@ -1,14 +1,13 @@
 
 interface imgProps{
-    src: string,
     className: string,
-    alt : string
-  
 }
 
 function Image (props : imgProps){
     return(
-        <img {...props}/>
+        <img className= {props.className}
+        src = "../../public/icons/logo.png"
+        alt = "logo do twitter"/>
     )
 }
 

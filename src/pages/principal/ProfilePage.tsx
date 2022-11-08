@@ -3,7 +3,7 @@ import Header from "./Header"
 import ProfilePageTop from "./ProfilePageTop"
 import Tweets from "./Tweets"
 
-import "../styles/components/profile_page.sass"
+import "../../styles/components/profile_page.sass"
 
 function ProfilePage (){
     return(

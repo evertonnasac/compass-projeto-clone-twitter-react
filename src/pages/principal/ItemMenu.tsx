@@ -1,5 +1,5 @@
 import {Link} from "react-router-dom"
-import "../styles/components/menu_item_menu.sass"
+import "../../styles/components/menu_item_menu.sass"
 import { Context } from "../../context/themeContext"
 import { useContext } from "react"
 
@@ -7,6 +7,7 @@ import { useContext } from "react"
 interface ItemProps {
     item : string,
     urlIcon : string
+    setAba(e : any):void
 }
 
 
@@ -16,7 +17,7 @@ const routesMenu  = {
 } 
 
 
-function ItemMenu  ({item, urlIcon}: ItemProps){
+function ItemMenu  ({item, urlIcon, setAba}: ItemProps){
 
     const {theme} = useContext(Context)
 
@@ -33,7 +34,7 @@ function ItemMenu  ({item, urlIcon}: ItemProps){
         return (
             <div className="item_menu">
                 <img src={urlIcon} alt="incone" className="icon_menu" />
-                <p><Link to = "/profile" className={theme}>{item}</Link></p>
+                <p onClick={() => setAba("profile")} className={theme}>{item}</p>
             </div>
         )
     }
@@ -41,7 +42,7 @@ function ItemMenu  ({item, urlIcon}: ItemProps){
         return (
             <div className="item_menu">
                 <img src={urlIcon} alt="incone" className="icon_menu" />
-                <p><Link to = "/" className={theme}>{item}</Link></p>
+                <p onClick={() => setAba("timeline")} className={theme}>{item}</p>
             </div>
         )
     }
@@ -49,7 +50,7 @@ function ItemMenu  ({item, urlIcon}: ItemProps){
         return (
             <div className="item_menu">
                 <img src={urlIcon} alt="incone" className="icon_menu" />
-                <p><Link to = "/error" className={theme}>{item}</Link></p>
+                <p onClick={() => setAba("error")} className={theme}>{item}</p>
             </div>
         )
     }

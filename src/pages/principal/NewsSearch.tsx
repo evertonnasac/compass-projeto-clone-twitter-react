@@ -1,6 +1,6 @@
 import Input from "../../components/Input";
 
-import "../styles/components/news_search.sass"
+import "../../styles/components/news_search.sass"
 
 function NewsSearch(){
     return(

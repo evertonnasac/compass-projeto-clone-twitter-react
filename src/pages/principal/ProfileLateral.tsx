@@ -2,7 +2,7 @@ import { Context } from "../../context/themeContext"
 import { useContext } from "react"
 
 
-import "../styles/components/profile_lateral.sass"
+import "../../styles/components/profile_lateral.sass"
 
 function ProfileLateral (){
 
