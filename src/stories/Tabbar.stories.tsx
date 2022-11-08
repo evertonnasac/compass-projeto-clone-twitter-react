@@ -1,6 +1,6 @@
 import {Meta, StoryObj} from "@storybook/react"
 
-import Tabbar from "../components/Tabbar"
+import Tabbar from "../pages/principal/Tabbar"
 
 export default {
     title: "Components/Tabbar",

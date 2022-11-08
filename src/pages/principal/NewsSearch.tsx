@@ -1,4 +1,4 @@
-import Input from "./Input";
+import Input from "../../components/Input";
 
 import "../styles/components/news_search.sass"
 

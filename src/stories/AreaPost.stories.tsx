@@ -1,6 +1,6 @@
 import {Meta, StoryObj} from "@storybook/react"
 
-import AreaPost from "../components/AreaPost";
+import AreaPost from "../pages/principal/AreaPost";
 
 export default{
     title: "Components/Post",

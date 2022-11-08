@@ -1,7 +1,7 @@
-import Input from "./Input"
+import Input from "../../components/Input"
 import NewsCard from "./NewsCard"
 import { useContext } from "react"
-import { Context } from "../context/themeContext"
+import { Context } from "../../context/themeContext"
 
 import "../styles/components/news.sass"
 

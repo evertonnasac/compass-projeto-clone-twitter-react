@@ -1,7 +1,7 @@
-import Button from "../components/Button"
+import Button from "../../components/Button"
 import ItemMenu from "./ItemMenu"
 import ProfileLateral from "./ProfileLateral"
-import { Context } from "../context/themeContext"
+import { Context } from "../../context/themeContext"
 import { useContext } from "react"
 
 import "../styles/components/menu_container.sass"

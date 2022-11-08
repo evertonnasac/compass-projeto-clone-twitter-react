@@ -1,7 +1,7 @@
 
-import Button from "./Button"
+import Button from "../../components/Button"
 import { useContext } from "react"
-import { Context } from "../context/themeContext"
+import { Context } from "../../context/themeContext"
 
 import "../styles/components/profile_page_top.sass"
 

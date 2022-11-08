@@ -1,7 +1,7 @@
 import { Meta, StoryObj } from '@storybook/react';
 import { withRouter } from 'storybook-addon-react-router-v6';
 
-import MenuLateral from '../components/Menulateral';
+import MenuLateral from '../pages/principal/Menulateral';
 
 export default{
     title: "Components/Menu",
