@@ -15,7 +15,7 @@ export interface User {
     photo: string
     followers : string[]
     followings : string[]
-    email: string,
+    login: string,
     password: string
 }
 

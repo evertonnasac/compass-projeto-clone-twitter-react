@@ -1,4 +1,3 @@
-import {Link} from "react-router-dom"
 import "../../styles/components/menu_item_menu.sass"
 import { Context } from "../../context/themeContext"
 import { useContext } from "react"

@@ -17,18 +17,18 @@ import "../../styles/components/main.sass"
 function Main(){
 
     const {theme} = useContext(Context) 
-    const [aba, setAba] = useState("") 
+    const [aba, setAba] = useState("timeline") 
 
-    let element : any
+    let Element : any
 
     if(aba == "timeline"){
-        element = <TimeLine/>
+        Element = <TimeLine/>
     }
-    else if(aba == "home"){
-        element = <ProfilePage/>
+    else if(aba == "profile"){
+        Element = <ProfilePage/>
     }
     else{
-        element = <Error/>
+        Element = <Error/>
     }
 
     return(
@@ -39,7 +39,7 @@ function Main(){
                 <ProfileLateral/>
             </aside>
             <main className={theme + " main_container"}>
-                {element}
+                {Element}
             </main > 
             <article className= {theme +" right_container"}>
                 <NewsSearch/>
