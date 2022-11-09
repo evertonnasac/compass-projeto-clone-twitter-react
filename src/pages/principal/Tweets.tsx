@@ -3,10 +3,12 @@ import { Context } from "../../context/themeContext"
 import { useContext, useState, useEffect} from "react"
 import { getUserAuthenticate } from "../../controllers/user-controller"
 import InputComment from "../../components/InputComment"
+import { getUserId } from "../../controllers/user-controller"
 import { getTweets } from "../../controllers/tweet-controller"
-
-import "../../styles/components/tweets.sass"
+import { User } from "../../data/templates"
 import { Tweet } from "../../data/templates"
+import "../../styles/components/tweets.sass"
+
 
 
 function Tweets (){
@@ -18,7 +20,6 @@ function Tweets (){
 
     useEffect(()=>{
         setTweet(getTweets())
-       
         
     },[])
   
@@ -46,23 +47,23 @@ function Tweets (){
     return(
         <section className={theme +" tweets_container"}>
             {tweets.map(tweet =>{
+                let user : User | undefined = getUserId(tweet.id_author)
                 return (
                     <div className="tweet_card">
                     <div className="tweet_content_photo">
-                        <img src="../../public/images/profile/fotoperfil.png" className="tweet_photo_profile" alt="user"/>
+                        <img src="../../public/images/profile/fotoperfil.png" 
+                            className="tweet_photo_profile" alt="user"/>
                     </div>
                     
                     <div className="tweet_content_info">
                         <div className="tweet_data">
-                            <p className={theme + " tweet_user"}></p>
-                            <p className="tweet_tagname">@teste</p>
+                            <p className={theme + " tweet_user"}>{user?.name}</p>
+                            <p className="tweet_tagname">{user?.tagName}</p>
                             <p className="tweet_time">50</p>
                         </div>
     
-                        <div className={theme +" tweet_body"}>Lorem ipsum dolor sit amet consectetur 
-                            adipisicing elit. Voluptatibus placeat eaque nobis totam perspiciatis 
-                            nostrum. Dolor ducimus voluptatum mollitia necessitatibus architecto,
-                            minima cupiditate cum? Non ab animi commodi veniam molestias.
+                        <div className={theme +" tweet_body"}>
+                            {tweet.text}
                          </div>
                         
                         <div className="tweet_actions">
@@ -70,7 +71,7 @@ function Tweets (){
                                 <img src="../../public/icons/action-posts/comment.png" 
                                      className="post_icon"
                                      alt ="comentar"/>
-                                <p className="number"></p>
+                                <p className="number">{tweet.comments.length}</p>
                             </div>
                             <div className="action">
                                 <img src="../../public/icons/action-posts/retweet.png" 
@@ -82,7 +83,7 @@ function Tweets (){
                                 <img src="../../public/icons/action-posts/like.png" 
                                      className="post_icon" 
                                      alt="curtir" />
-                                <p className="number"></p>
+                                <p className="number">{tweet.likes}</p>
                             </div>
                             <div className="action">
                                 <img src="../../public/icons/action-posts/share.png" 

@@ -27,7 +27,7 @@ function setComments(idAuthor: string, idTweet: string, txt: string){
 
 }
 
-function setLike(idTweet: string){
+export function setLike(idTweet: string){
     setLikeOnTweet(idTweet)
 
 }

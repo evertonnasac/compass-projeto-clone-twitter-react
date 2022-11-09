@@ -71,6 +71,7 @@ export function getUserAuth(){
 }
 
 export function getUserById (id: string){
+    console.log(id)
     let user : User[] = getSavedUsers()
     console.log(user.find((user)=> user.id_user == id))
     return user.find((user)=> user.id_user == id) || undefined

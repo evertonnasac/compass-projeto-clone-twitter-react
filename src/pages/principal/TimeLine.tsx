@@ -13,8 +13,7 @@ function TimeLine (){
             <Header screen = "Home"/>
             <AreaPost/>
             <Tweets/>
-            <Tweets/>
-            <Tweets/>
+
         </div>
     )
   
