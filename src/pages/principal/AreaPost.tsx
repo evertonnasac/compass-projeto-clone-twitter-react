@@ -2,10 +2,11 @@
 import Button from "../../components/Button"
 import { Context } from "../../context/themeContext"
 import { useContext } from "react"
-
+import { getUserAuthenticate } from "../../controllers/user-controller"
 import "../../styles/components/timeline_area_post.sass"
-import React, { useState } from "react"
+import  { useState } from "react"
 import tweetController from "../../controllers/tweet-controller"
+import InputComment from "../../components/InputComment"
 
 let icons  = [
     {
@@ -36,6 +37,17 @@ function AreaPost(){
 
     const [tweet, setTweet] = useState("")
     const {theme} = useContext(Context)
+    
+    const [idUserAuth] = useState<string>(getUserAuthenticate())
+    let inpuComment: any = ""
+
+    if(idUserAuth){
+        inpuComment = <InputComment/>
+    }
+
+    function setComent(e:any){
+        
+    }
 
     function handleTweet(e : any){
         setTweet(e.target.value)

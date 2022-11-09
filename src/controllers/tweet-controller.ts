@@ -14,7 +14,7 @@ function createTweet (text: string, idAuthor:string){
     saveTweet(tweet)
 }
 
-function getTweets(){
+export function getTweets():Tweet[] {
     return getSavedTweets()
 }
 

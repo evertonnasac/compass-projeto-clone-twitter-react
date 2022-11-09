@@ -6,7 +6,7 @@ export function saveTweet (tweet: Tweet){
     localStorage.setItem("tweet",JSON.stringify(tweets))
 }
 
-export function getSavedTweets(){
+export function getSavedTweets():Tweet[]{
     if(localStorage.getItem("tweet")){
         return JSON.parse(localStorage.getItem("tweet")||"")
        
