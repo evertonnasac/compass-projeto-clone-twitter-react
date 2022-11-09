@@ -12,13 +12,15 @@ export interface userLogin{
 export function login(userTest : userLogin){
 
     let users : User[] = getSavedUsers()
+    console.log(userTest.login)
     let userAuth = users.find((user) => {
-        return user["login"] == userTest["login"] && 
-               user["password"] == userTest["password"]
+        return user.login == userTest.login && user.password
     } ) 
 
+    console.log(userAuth)
+
     if(userAuth){
-        setUserAuth(userAuth["id_user"])
+        setUserAuth(userAuth.id_user)
     }
 }
 
@@ -26,8 +28,4 @@ export function login(userTest : userLogin){
 
 export function logOut(){
     localStorage.removeItem("userAuth")
-}
-
-export function getAuth() : boolean | string{
-    return getUserAuth()
 }

@@ -43,7 +43,7 @@ function RegisterProfile(){
             <form onSubmit={submitUser}>
                 <input type="file" name="image" id="" />
                 <input type="text" name="tagname" placeholder="tagname" onChange={handleUser} />
-                <input type="password" name="passowrd" placeholder="Passwordd" onChange={handleUser} />
+                <input type="password" name="password" placeholder="Passwordd" onChange={handleUser} />
                 <input type="text" name="city" placeholder="City" onChange={handleUser}/>
                 <textarea name="bio" onChange={handleUser}></textarea>
                 <Button

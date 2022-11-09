@@ -62,10 +62,17 @@ export function setUserAuth(idUser: string | undefined){
     localStorage.setItem("userAuth", (JSON.stringify(idUser)))
 }
 
-export function getUserAuth() : boolean | string{
+export function getUserAuth(){
     if(localStorage.getItem("userAuth")){
-        return JSON.parse(localStorage.getItem("authUser") || "")
+        return JSON.parse(localStorage.getItem("userAuth") || "")
 
     }
-    return false
+    return undefined
+}
+
+export function getUserById (id: string){
+    let user : User[] = getSavedUsers()
+    console.log(user.find((user)=> user.id_user == id))
+    return user.find((user)=> user.id_user == id) || undefined
+
 }

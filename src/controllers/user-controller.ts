@@ -1,8 +1,8 @@
 import { User } from "../data/templates"
-import { setNewUser } from "../data/services"
+import { setNewUser, getUserAuth, getUserById } from "../data/services"
 
 
-function getIdUser (){
+function setIdUser (){
     const init = Date.now().toString(36)
     const final = Math.random().toString(36).substring(2)
     return init + final
@@ -13,8 +13,16 @@ export function createNewUser(newUser: User){
         ...newUser,
         followers: [],
         followings: [],
-        id_user: getIdUser()
+        id_user: setIdUser()
 
     }
     setNewUser(user)
+}
+
+export function getUserAuthenticate(){
+    return getUserAuth
+}
+
+export function getUserId(id:string){
+    return getUserById(id)
 }

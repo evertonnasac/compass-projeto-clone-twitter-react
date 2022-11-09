@@ -3,11 +3,13 @@ import { Link } from "react-router-dom"
 import { login, userLogin } from "../../auth/authenticate"
 import "../../styles/login/login.sass"
 import { useState } from "react"
+import { useNavigate } from "react-router-dom"
 
 
 function Login(){
     
     const [user, setUser] = useState<userLogin>({login: "", password: ""})
+    const navigate = useNavigate()
 
     function handleUser (e:any){
         setUser(
@@ -20,6 +22,7 @@ function Login(){
 
     function getLogin(){
         login(user)
+        navigate("/")
 
     }
 

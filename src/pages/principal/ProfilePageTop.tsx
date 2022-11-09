@@ -1,13 +1,22 @@
 
 import Button from "../../components/Button"
-import { useContext } from "react"
+import { useContext, useEffect, useState } from "react"
 import { Context } from "../../context/themeContext"
-
+import { getUserAuthenticate, getUserId } from "../../controllers/user-controller"
+import { User } from "../../data/templates"
 import "../../styles/components/profile_page_top.sass"
 
 function ProfilePageTop(){
 
     const {theme} = useContext(Context)
+
+    const [idUserAuth] = useState<string>(getUserAuthenticate())
+
+    let user : User | undefined
+
+    if(idUserAuth){
+        user = getUserId(idUserAuth)
+    }
 
     return(
         <div className={theme + " profile_header"}>
@@ -28,22 +37,22 @@ function ProfilePageTop(){
             </section>
 
             <section className="content_botton_profile_header">
-                <p className="name_profile_page">Davide Biscuso</p>
-                <p className="tagname_profile_page">@biscuttu</p>
-                <p className="bio_profile_page">Web Developer</p>
+                <p className="name_profile_page">{user?.name}</p>
+                <p className="tagname_profile_page">{user?.tagName}</p>
+                <p className="bio_profile_page">{user?.bio}</p>
                 <div className="info_profile_page">
 
                     <article>
-                        <p className="city_profile_page">London</p>
-                        <p className="data_profile_page">Joined September 2011</p>
+                        <p className="city_profile_page">{user?.city}</p>
+                        <p className="data_profile_page">{user?.city}</p>
                     </article>
 
                     <article>
                         <p className="following_profile_page">
-                            <span>500</span>Following
+                            <span>{user?.followings?.length}</span>Following
                         </p>
                         <p className="followers_profile_page">
-                            <span>50</span>Followers
+                            <span>{user?.followers?.length}</span>Followers
                         </p>
                     </article> 
                 </div>
