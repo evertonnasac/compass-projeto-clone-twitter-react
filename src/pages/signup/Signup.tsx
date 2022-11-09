@@ -16,7 +16,7 @@ function Signup (){
                 <h3>Join Twitter today</h3>
                 <button className="btn_google btn_signup">Signup with Google</button>
                 <button className="btn_apple btn_signup">Signup with Apple</button>
-                <Link to={"/login"}className="btn_email_phone btn_signup">Signup with email or phone</Link>
+                <Link to={"/register"}className="btn_email_phone btn_signup">Signup with email or phone</Link>
                 <p className="terms_signup">
                     By singing up you agree to the <span>Terms of Service </span> 
                     and <span>Policy</span>, 

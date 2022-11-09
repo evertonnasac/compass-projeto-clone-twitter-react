@@ -22,6 +22,7 @@ function Footer (){
                     width="100px"
                     height="100%"
                     kind="primary"
+                    onClick={(e: any) => {navigate("/login")}}
                 /> 
             </div>
             <div className="btn_footer_signup">
@@ -29,7 +30,7 @@ function Footer (){
                         width="100px"
                         height="100%"
                         kind="secondary"
-                        onClick={(e: any) => {navigate("/register")}}
+                        onClick={(e: any) => {navigate("/signup")}}
                 />
                 </div>
           

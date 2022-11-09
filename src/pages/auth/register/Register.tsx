@@ -18,20 +18,20 @@ function Register (){
 
     if(typeInput == "phone"){
         Input =  <input type="number" 
-                name="phone_user " 
+                name="login" 
                 className="register_phone input" 
                 placeholder="Phone" />
 
-        label = "Use Phone"
+        label = "Use Email"
     }
 
     else if (typeInput == "email"){
         Input = <input type="email" 
-                name="email_user " 
+                name="login" 
                 className="register_email input" 
                 placeholder="Email" />
 
-        label = "Use Email"
+        label = "Use Phone"
     }
     
 
@@ -39,7 +39,7 @@ function Register (){
         <section  className="register">
             <LogoTwitter className="logo_register"/>
             <p className="register_title">Create Account</p>
-            <input type="text" className="register_name input" name = "name_user" placeholder="Name"/>
+            <input type="text" className="register_name input" name = "name" placeholder="Name"/>
 
             {Input}
 
