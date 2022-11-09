@@ -1,5 +1,6 @@
 import Main from "./pages/principal/Main"
 import Register from "./pages/auth/register/Register"
+import RegisterProfile from "./pages/auth/register/RegisterProfile"
 import Signup from "./pages/signup/Signup"
 import Login from "./pages/login/Login"
 import { ThemeContext,  } from "./context/themeContext"
@@ -20,6 +21,7 @@ function App() {
           <Route  path="/register" element = {<Register/>}/>
           <Route  path="/signup" element = {<Signup/>}/>
           <Route  path="/login" element = {<Login/>}/>
+          <Route  path="/nextregister" element = {<RegisterProfile/>}/>
         </Routes>
       </ThemeContext>
     </BrowserRouter>

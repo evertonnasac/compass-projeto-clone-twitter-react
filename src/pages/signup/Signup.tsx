@@ -1,8 +1,14 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
 
 import "../../styles/signup/signup.sass"
 
 function Signup (){
+
+    const [user, setUser] = useState({})
+
+    
+
     return(
         <section className="signup">
             <div className="signup_container_image">

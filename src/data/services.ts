@@ -1,4 +1,4 @@
-import { Comments, Tweet } from "./templates";
+import { Comments, Tweet, User } from "./templates";
 
 export function saveTweet (tweet: Tweet){
     let tweets  = getSavedTweets()
@@ -43,3 +43,29 @@ export function setLikeOnTweet(idTweet: string){
     localStorage.setItem("tweets", JSON.stringify(tweets))
 }
     
+export function setNewUser(user: User){
+    let users: User[] = getSavedUsers()
+    users.push(user)
+    localStorage.setItem("users", (JSON.stringify(users)))
+    setUserAuth(user["id_user"])
+}
+
+export function getSavedUsers(){
+    if(localStorage.getItem("users")){
+        return JSON.parse(localStorage.getItem("users")||"")
+       
+    }
+    else return []
+}
+
+export function setUserAuth(idUser: string | undefined){
+    localStorage.setItem("userAuth", (JSON.stringify(idUser)))
+}
+
+export function getUserAuth() : boolean | string{
+    if(localStorage.getItem("userAuth")){
+        return JSON.parse(localStorage.getItem("authUser") || "")
+
+    }
+    return false
+}

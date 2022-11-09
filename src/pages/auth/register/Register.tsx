@@ -4,11 +4,20 @@ import Button from "../../../components/Button"
 import { useState } from "react"
 
 import "../../../styles/register/register.sass"
+import { useNavigate } from "react-router-dom"
+
+interface user{
+    login: string,
+    name: string
+}
 
 function Register (){
 
     const [typeInput, setTypeInput] = useState("phone")
+    const [user, setUser] = useState <user>({name: "", login: ""})
+    const navigate = useNavigate()
 
+    
     let Input : any
     let label : string = ""
 
@@ -20,7 +29,8 @@ function Register (){
         Input =  <input type="number" 
                 name="login" 
                 className="register_phone input" 
-                placeholder="Phone" />
+                placeholder="Phone"
+                onChange={handleUser} />
 
         label = "Use Email"
     }
@@ -29,17 +39,31 @@ function Register (){
         Input = <input type="email" 
                 name="login" 
                 className="register_email input" 
-                placeholder="Email" />
+                placeholder="Email" 
+                onChange={handleUser}/>
 
         label = "Use Phone"
     }
-    
 
+    function handleUser(e : any){
+        setUser({
+            ...user,
+            [e.target.name]:e.target.value
+        })
+
+        console.log(user)
+    }
+    
+    function nextRegister(e : any){
+
+        navigate(`/nextregister?name=${user["name"]}&login=${user["login"]}`)
+    }
     return(
         <section  className="register">
             <LogoTwitter className="logo_register"/>
             <p className="register_title">Create Account</p>
-            <input type="text" className="register_name input" name = "name" placeholder="Name"/>
+            <input type="text" className="register_name input"
+                     name = "name" placeholder="Name" onChange={handleUser}/>
 
             {Input}
 
@@ -62,6 +86,7 @@ function Register (){
                 height="7%"
                 width="100%"
                 kind="primary"
+                onClick={nextRegister}
             />
             
 

@@ -1,4 +1,6 @@
-import { User, UserAuth } from "../data/templates"
+import { getSavedUsers, setUserAuth, getUserAuth } from "../data/services"
+import { User } from "../data/templates"
+
 
 export interface userLogin{
     login: string,
@@ -6,14 +8,26 @@ export interface userLogin{
 }
 
 
-export function setAuthenticate(userTest: userLogin){
 
-    let users : User[] = JSON.parse(localStorage.getItem("user") || "")
+export function login(userTest : userLogin){
+
+    let users : User[] = getSavedUsers()
     let userAuth = users.find((user) => {
         return user["login"] == userTest["login"] && 
                user["password"] == userTest["password"]
     } ) 
 
-    localStorage.setItem("userAuth", JSON.stringify(userAuth))
+    if(userAuth){
+        setUserAuth(userAuth["id_user"])
+    }
 }
 
+
+
+export function logOut(){
+    localStorage.removeItem("userAuth")
+}
+
+export function getAuth() : boolean | string{
+    return getUserAuth()
+}

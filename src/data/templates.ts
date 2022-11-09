@@ -9,20 +9,21 @@ export interface Tweet  {
 }
 
 export interface User {
-    id_user: string
+    id_user?: string
     name: string,
-    tagName: string
+    tagName?: string
     photo: string
-    followers : string[]
-    followings : string[]
+    followers? : string[]
+    followings? : string[]
     login: string,
-    password: string
+    city: string,
+    password: string,
+    tweets? : string[]
 }
 
 export interface UserAuth{
     id_user: string,
-    tagName: string,
-    nameAuth: string,
+   
 }
 
 
