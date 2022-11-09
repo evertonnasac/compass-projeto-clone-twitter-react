@@ -19,6 +19,12 @@ export interface User {
     password: string
 }
 
+export interface UserAuth{
+    id_user: string,
+    tagName: string,
+    nameAuth: string,
+}
+
 
 export interface Comments {
     id_author : string

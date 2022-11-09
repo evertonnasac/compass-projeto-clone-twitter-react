@@ -1,7 +1,7 @@
 import Main from "./pages/principal/Main"
 import Register from "./pages/auth/register/Register"
 import Signup from "./pages/signup/Signup"
-import Login from "./pages/login/login"
+import Login from "./pages/login/Login"
 import { ThemeContext,  } from "./context/themeContext"
 import {BrowserRouter, Routes, Route} from  "react-router-dom"
 
