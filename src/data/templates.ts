@@ -10,14 +10,15 @@ export interface Tweet  {
 
 export interface User {
     id_user?: string
-    name: string,
-    tagName?: string
-    photo: string
+    name?: string,
+    tagName?: string,
+    bio?:string,
+    photo?: string
     followers? : string[]
     followings? : string[]
-    login: string,
-    city: string,
-    password: string,
+    login?: string,
+    city?: string,
+    password?: string,
     tweets? : string[]
 }
 
