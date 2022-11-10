@@ -17,6 +17,7 @@ function ProfilePageTop(){
     if(idUserAuth){
         user = getUserId(idUserAuth)
     }
+    console.log(user?.photo)
 
     return(
         <div className={theme + " profile_header"}>
@@ -24,7 +25,7 @@ function ProfilePageTop(){
                 <img src="../../public/images/profile/fotocapa.png" 
                     alt="foto de capa" className="image_capa_profile_page"/>
 
-                <img src="../../public/images/profile/fotoperfil.png" 
+                <img src= {user?.photo}
                     alt="foto de perfil" className="image_profile_page"/>
 
                 <div className="btn_profile_page">
@@ -38,13 +39,13 @@ function ProfilePageTop(){
 
             <section className="content_botton_profile_header">
                 <p className="name_profile_page">{user?.name}</p>
-                <p className="tagname_profile_page">{user?.tagName}</p>
+                <p className="tagname_profile_page">{user?.tagname}</p>
                 <p className="bio_profile_page">{user?.bio}</p>
                 <div className="info_profile_page">
 
                     <article>
                         <p className="city_profile_page">{user?.city}</p>
-                        <p className="data_profile_page">{user?.city}</p>
+                        <p className="data_profile_page"></p>
                     </article>
 
                     <article>

@@ -12,16 +12,16 @@ export interface userLogin{
 export function login(userTest : userLogin){
 
     let users : User[] = getSavedUsers()
-    console.log(userTest.login)
     let userAuth = users.find((user) => {
         return user.login == userTest.login && user.password
     } ) 
 
-    console.log(userAuth)
 
     if(userAuth){
         setUserAuth(userAuth.id_user)
+        return true
     }
+    return false
 }
 
 

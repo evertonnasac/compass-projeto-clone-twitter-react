@@ -13,7 +13,9 @@ export function createNewUser(newUser: User){
         ...newUser,
         followers: [],
         followings: [],
-        id_user: createId()
+        id_user: createId(),
+        join: new Date().toDateString()        
+        
 
     }
     setNewUser(user)

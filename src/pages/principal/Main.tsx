@@ -53,7 +53,7 @@ function Main(){
         <div className={theme + " main"}>
             <aside className="left_container">
                 <MenuLateral  setAba = {setBlock}/>
-                {idUserAuth ?  <ProfileLateral/> : ""}
+                {idUserAuth ?  <ProfileLateral idUser={idUserAuth}/> : ""}
                
             </aside>
             <main className={theme + " main_container"}>

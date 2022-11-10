@@ -20,13 +20,13 @@ function Tweets (){
     const {theme} = useContext(Context)
     const [tweets, setTweet] = useState<Tweet[]>([])
     const [idUserAuth] = useState<string>(getUserAuthenticate())
-    const [comment, setComment] = useState({})
+    const [refresh, setRefresh] = useState(true)
     const navigate = useNavigate()
 
     useEffect(()=>{
         setTweet(getTweets())
         
-    },[])
+    },[refresh])
 
     function setLikeTweet(idTweet: string){
         if(!idUserAuth){
@@ -36,7 +36,13 @@ function Tweets (){
             }
             return
         }
+        
         setLike(idTweet)
+        setRefresh(!refresh)
+    }
+
+    function goRefresh(){
+        setRefresh(!refresh)
     }
 
     return(
@@ -47,7 +53,7 @@ function Tweets (){
                     <div className="tweet_card">
                         <input type="hidden" name="id_tweet" value={tweet.id_tweet} />
                         <div className="tweet_content_photo">
-                            <img src="../../public/images/profile/fotoperfil.png" 
+                            <img src={user?.photo}
                                 className="tweet_photo_profile" alt="user"/>
                         </div>
                         
@@ -55,7 +61,7 @@ function Tweets (){
                             <div className="tweet_data">
                                 <p className={theme + " tweet_user"}>{user?.name}</p>
                                 <p className="tweet_tagname">{user?.tagname}</p>
-                                <p className="tweet_time">50</p>
+                                <p className="tweet_time"></p>
                             </div>
         
                             <div className={theme +" tweet_body"}>
@@ -98,15 +104,20 @@ function Tweets (){
                                 return(
                                     <div className={theme +" comments_container"}>
                                         <div className="comments_header">
+                                            <img src={user?.photo} alt="Perfil" style={{
+                                                width: "50px",
+                                                height: "50px",
+                                                borderRadius: "100%"
+                                            }} />
                                             <p className="name_comment">{user?.name}</p>
                                             <p className="tagname_comment">{user?.tagname}</p>
                                         </div>
-                                        <p className="comment">{comment.comment}</p>
+                                        <p className="comment" style={{marginLeft: "50px"}}>{comment.comment} </p>
                                     </div>
                                 )
                             })}
                            
-                            <InputComment idTweet={tweet.id_tweet}/>
+                            <InputComment idTweet={tweet.id_tweet} refresh = {goRefresh}/>
                         </div> 
                     </div>
                 )

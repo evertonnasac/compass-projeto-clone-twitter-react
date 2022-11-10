@@ -20,6 +20,7 @@ export interface User {
     city?: string,
     password?: string,
     tweets? : string[]
+    join?:string
 }
 
 export interface UserAuth{

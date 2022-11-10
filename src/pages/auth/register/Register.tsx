@@ -50,12 +50,10 @@ function Register (){
             ...user,
             [e.target.name]:e.target.value
         })
-
-        console.log(user)
     }
     
     function nextRegister(e : any){
-
+        
         navigate(`/nextregister?name=${user["name"]}&login=${user["login"]}`)
     }
     return(

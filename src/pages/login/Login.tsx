@@ -24,8 +24,10 @@ function Login(props : propsLogin){
     }
 
     function getLogin(){
-        login(user)
-        navigate("/")
+        if(login(user)){
+            navigate("/")
+        }
+        
 
     }
 

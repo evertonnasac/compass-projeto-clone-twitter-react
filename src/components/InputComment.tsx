@@ -10,6 +10,7 @@ import "../styles/components/input_comment.sass"
 
 interface commentProp{
     idTweet: string
+    refresh(): void
 }
 
 function InputComment(props: commentProp){
@@ -34,6 +35,9 @@ function InputComment(props: commentProp){
         }
         if(comment){
             setComments(idUserAuth, props.idTweet, comment)
+            props.refresh()
+            let element = document.querySelector("#comment_area_1")
+        
         }
         
     }
@@ -42,7 +46,9 @@ function InputComment(props: commentProp){
         <div className={theme +" container_comment"}>
             <textarea className= {theme +" txt_comment"} 
                 name="comment" 
-                onChange={handleComment}>
+                onChange={handleComment}
+                id = {"comment_area_1"}>
+                
             </textarea>
             <Button
                 content="Send"

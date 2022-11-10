@@ -3,10 +3,11 @@ import Button from "../../components/Button"
 import { Context } from "../../context/themeContext"
 import { useContext } from "react"
 import { getUserAuthenticate } from "../../controllers/user-controller"
-import "../../styles/components/timeline_area_post.sass"
-import  { useState, useRef } from "react"
+import  { useState } from "react"
 import tweetController from "../../controllers/tweet-controller"
-import InputComment from "../../components/InputComment"
+import { getUserId } from "../../controllers/user-controller"
+
+import "../../styles/components/timeline_area_post.sass"
 
 let icons  = [
   
@@ -33,15 +34,22 @@ function AreaPost(){
 
     const [tweet, setTweet] = useState("")
     const {theme} = useContext(Context)
-    let srcImage : any = ""
+    const [srcImage, setSrcImage]  = useState("")
     
     const [idUserAuth] = useState<string>(getUserAuthenticate())
+
+    const user= getUserId(idUserAuth)
+
 
     function handleTweet(e : any){
         setTweet(e.target.value)
     }
 
     function saveTweet(){
+        if(tweet.length<1){
+            return
+        }
+        
         tweetController.createTweet(tweet, idUserAuth, srcImage)
     }
 
@@ -54,8 +62,9 @@ function AreaPost(){
 
             reader.addEventListener("load", (e) =>{
                 const readerTarget = e.target
-                srcImage = readerTarget?.result?.toString()
-                console.log(srcImage)
+                setSrcImage(readerTarget?.result?.toString() || "")
+
+               
             })
             reader.readAsDataURL(file)
 
@@ -67,7 +76,7 @@ function AreaPost(){
         <section className= {theme +" post"}>
             
             <div className="post_text">
-                <img src="../../public/images/profile/fotoperfil.png" 
+                <img src={user?.photo} 
                     alt= "Foto de perfil" 
                     className = "image_profile" />
                 <textarea
