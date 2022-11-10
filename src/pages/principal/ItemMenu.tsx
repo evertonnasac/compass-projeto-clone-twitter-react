@@ -20,15 +20,6 @@ function ItemMenu  ({item, urlIcon, setAba}: ItemProps){
 
     const {theme} = useContext(Context)
 
-    /*let path : string = routesMenu[item] || "/error"
-
-    return(
-        <div className="item_menu">
-                <img src={urlIcon} alt="incone" className="icon_menu" />
-                <p><Link to = {path} className={theme}>{item}</Link></p>
-        </div>
-    )
-*/
     if(item == "Profile"){
         return (
             <div className="item_menu">

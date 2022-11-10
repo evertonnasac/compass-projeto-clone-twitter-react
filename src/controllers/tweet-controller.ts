@@ -3,14 +3,17 @@ import { saveTweet,getSavedTweets, setCommentOnTweet, setLikeOnTweet } from "../
 import { createId } from "./user-controller"
 
 
-function createTweet (text: string, idAuthor:string){
+function createTweet (text: string, idAuthor:string, srcImage:string){
+    
    let tweet : Tweet = {
         id_author: idAuthor,
         text: text,
         id_tweet : createId(),
         comments : [],
         likes: 0,
-        time: Date.now().toString()
+        time: Date.now().toString(),
+        photo: srcImage || ""
+        
     }
     saveTweet(tweet)
 }
@@ -19,7 +22,7 @@ export function getTweets():Tweet[] {
     return getSavedTweets()
 }
 
-export function setComments(idAuthor: string, idTweet: string, txt: string){
+export function setComments(idAuthor: string, idTweet: string, txt: string ){
     let comment : Comments = {
         id_author: idAuthor,
         comment: txt,

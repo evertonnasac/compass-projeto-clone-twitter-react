@@ -20,7 +20,7 @@ function App() {
           <Route  path="/" element = {<Main/>}/>
           <Route  path="/register" element = {<Register/>}/>
           <Route  path="/signup" element = {<Signup/>}/>
-          <Route  path="/login" element = {<Login/>}/>
+          <Route  path="/login" element = {<Login classNmame=""/>}/>
           <Route  path="/nextregister" element = {<RegisterProfile/>}/>
         </Routes>
       </ThemeContext>

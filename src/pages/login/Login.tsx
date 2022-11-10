@@ -5,8 +5,11 @@ import "../../styles/login/login.sass"
 import { useState } from "react"
 import { useNavigate } from "react-router-dom"
 
+interface propsLogin {
+    classNmame: string
+}
 
-function Login(){
+function Login(props : propsLogin){
     
     const [user, setUser] = useState<userLogin>({login: "", password: ""})
     const navigate = useNavigate()
@@ -27,7 +30,7 @@ function Login(){
     }
 
     return(
-        <section className="login">
+        <section className={props.classNmame + " login"}>
             <img src="" alt="" className="logo-twitter" />
             <p className="title_login">Log in to Twitter</p>
             <input type="text" name="login" placeholder="Phone number, email addres" onChange={handleUser}/>

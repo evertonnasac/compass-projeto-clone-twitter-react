@@ -1,7 +1,9 @@
 import Button from "./Button"
 import { Context } from "../context/themeContext"
-import { useContext } from "react"
+import { useContext,useState } from "react"
 import { useNavigate } from "react-router-dom"
+import { getUserAuthenticate } from "../controllers/user-controller"
+import { logOut } from "../auth/authenticate"
 
 import "../styles/components/footer.sass"
 
@@ -9,6 +11,18 @@ function Footer (){
 
     const {theme} = useContext(Context)
     const navigate = useNavigate()
+    const [idUserAuth] = useState<string>(getUserAuthenticate())
+
+    let contentButton = ""
+    idUserAuth ? contentButton = "Logout" : contentButton = "Login"
+
+    function logout(){
+        if(idUserAuth){
+            logOut()
+        }
+        navigate("/login")
+    }
+
 
     return (
 
@@ -18,21 +32,23 @@ function Footer (){
                 <p className="footer_subtitle">People on Twitter are the first to know</p>
             </div>
             <div className="btn_footer_login">
-                <Button content="Log in "
+                <Button content={contentButton}
                     width="100px"
                     height="100%"
                     kind="primary"
-                    onClick={(e: any) => {navigate("/login")}}
+                    onClick={logout}
                 /> 
             </div>
-            <div className="btn_footer_signup">
+            {!idUserAuth? 
+                <div className="btn_footer_signup">
                 <Button content="Sign in "
                         width="100px"
                         height="100%"
                         kind="secondary"
                         onClick={(e: any) => {navigate("/signup")}}
                 />
-                </div>
+                </div> : ""}
+           
           
         </div>
     )

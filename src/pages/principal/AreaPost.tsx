@@ -4,15 +4,12 @@ import { Context } from "../../context/themeContext"
 import { useContext } from "react"
 import { getUserAuthenticate } from "../../controllers/user-controller"
 import "../../styles/components/timeline_area_post.sass"
-import  { useState } from "react"
+import  { useState, useRef } from "react"
 import tweetController from "../../controllers/tweet-controller"
 import InputComment from "../../components/InputComment"
 
 let icons  = [
-    {
-        path:  "../../public/icons/tweets/media.png",
-        alt: "media"
-    },
+  
     {
         path: "../../public/icons/tweets/gif.png",
         alt : "gif",
@@ -34,28 +31,41 @@ let icons  = [
 
 function AreaPost(){
 
-
     const [tweet, setTweet] = useState("")
     const {theme} = useContext(Context)
+    let srcImage : any = ""
     
     const [idUserAuth] = useState<string>(getUserAuthenticate())
-    let inpuComment: any = ""
-
-    if(idUserAuth){
-        inpuComment = <InputComment/>
-    }
 
     function handleTweet(e : any){
         setTweet(e.target.value)
     }
 
     function saveTweet(){
-        tweetController.createTweet(tweet, idUserAuth)
+        tweetController.createTweet(tweet, idUserAuth, srcImage)
+    }
+
+    function setImage(e:any){
+
+        const file = e.target.files[0]
+
+        if(file){
+            const reader = new FileReader()
+
+            reader.addEventListener("load", (e) =>{
+                const readerTarget = e.target
+                srcImage = readerTarget?.result?.toString()
+                console.log(srcImage)
+            })
+            reader.readAsDataURL(file)
+
+        }
     }
 
 
     return(
         <section className= {theme +" post"}>
+            
             <div className="post_text">
                 <img src="../../public/images/profile/fotoperfil.png" 
                     alt= "Foto de perfil" 
@@ -68,9 +78,13 @@ function AreaPost(){
                     >  
                 </textarea>
             </div>
-            
             <div className="post_options">
                 <div className =  "post_icons_container">
+                    <label className="label_image">
+                        <input  type="file" id="input_file"  onChange={(e)=>setImage(e)}/>
+                        <img src="../../public/icons/tweets/media.png"
+                         className="icon_input_image post_icons" ></img>
+                    </label>
 
                     {icons.map(({path, alt}, index) =>
                         <img  key = {index} 

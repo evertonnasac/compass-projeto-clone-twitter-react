@@ -20,7 +20,7 @@ export function createNewUser(newUser: User){
 }
 
 export function getUserAuthenticate(){
-    return getUserAuth
+    return getUserAuth()
 }
 
 export function getUserId(id:string){

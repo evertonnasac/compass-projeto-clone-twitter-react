@@ -1,13 +1,16 @@
 
 import { Context } from "../../context/themeContext"
-import { useContext, useState, useEffect} from "react"
+import { useContext, useState, useEffect,} from "react"
 import { getUserAuthenticate } from "../../controllers/user-controller"
+import { useNavigate } from "react-router-dom"
 import { setLike } from "../../controllers/tweet-controller"
 import InputComment from "../../components/InputComment"
 import { getUserId } from "../../controllers/user-controller"
 import { getTweets } from "../../controllers/tweet-controller"
 import { User } from "../../data/templates"
 import { Tweet } from "../../data/templates"
+
+
 import "../../styles/components/tweets.sass"
 
 
@@ -18,23 +21,31 @@ function Tweets (){
     const [tweets, setTweet] = useState<Tweet[]>([])
     const [idUserAuth] = useState<string>(getUserAuthenticate())
     const [comment, setComment] = useState({})
+    const navigate = useNavigate()
 
     useEffect(()=>{
         setTweet(getTweets())
         
     },[])
 
-
-
+    function setLikeTweet(idTweet: string){
+        if(!idUserAuth){
+            let comfirm = window.confirm("Você deve realizar login para utilizar o Tweeter!")
+            if(comfirm){
+                navigate("/login")
+            }
+            return
+        }
+        setLike(idTweet)
+    }
 
     return(
         <section className={theme +" tweets_container"}>
             {tweets.map(tweet =>{
                 let user : User | undefined = getUserId(tweet.id_author)
-                console.log(user?.tagname)
                 return (
                     <div className="tweet_card">
-                         <input type="hidden" name="id_tweet" value={tweet.id_tweet} />
+                        <input type="hidden" name="id_tweet" value={tweet.id_tweet} />
                         <div className="tweet_content_photo">
                             <img src="../../public/images/profile/fotoperfil.png" 
                                 className="tweet_photo_profile" alt="user"/>
@@ -49,6 +60,11 @@ function Tweets (){
         
                             <div className={theme +" tweet_body"}>
                                 {tweet.text}
+                                {tweet.photo? <img src={tweet.photo} 
+                                    style={{borderRadius : "16px",
+                                        display: "block",
+                                        width: "90%",
+                                        height: "70%"}}></img> : ""}
                             </div>
                             
                             <div className="tweet_actions">
@@ -66,7 +82,7 @@ function Tweets (){
                                 </div>
                                 <div className="action">
                                     <img src="../../public/icons/action-posts/like.png" 
-                                        className="post_icon" onClick={()=>setLike(tweet.id_tweet)} 
+                                        className="post_icon" onClick={()=>setLikeTweet(tweet.id_tweet)} 
                                         alt="curtir" />
                                     <p className="number">{tweet.likes}</p>
                                 </div>
