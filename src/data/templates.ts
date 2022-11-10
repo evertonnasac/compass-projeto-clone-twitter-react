@@ -11,7 +11,7 @@ export interface Tweet  {
 export interface User {
     id_user?: string
     name?: string,
-    tagName?: string,
+    tagname?: string,
     bio?:string,
     photo?: string
     followers? : string[]

@@ -1,15 +1,16 @@
 import { Tweet, Comments } from "../data/templates"
 import { saveTweet,getSavedTweets, setCommentOnTweet, setLikeOnTweet } from "../data/services"
+import { createId } from "./user-controller"
 
 
 function createTweet (text: string, idAuthor:string){
    let tweet : Tweet = {
         id_author: idAuthor,
         text: text,
-        id_tweet : "4585",
+        id_tweet : createId(),
         comments : [],
         likes: 0,
-        time: "000"
+        time: Date.now().toString()
     }
     saveTweet(tweet)
 }
@@ -18,7 +19,7 @@ export function getTweets():Tweet[] {
     return getSavedTweets()
 }
 
-function setComments(idAuthor: string, idTweet: string, txt: string){
+export function setComments(idAuthor: string, idTweet: string, txt: string){
     let comment : Comments = {
         id_author: idAuthor,
         comment: txt,

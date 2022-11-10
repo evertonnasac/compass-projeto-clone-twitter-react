@@ -3,12 +3,12 @@ import { Comments, Tweet, User } from "./templates";
 export function saveTweet (tweet: Tweet){
     let tweets  = getSavedTweets()
     tweets.push(tweet)
-    localStorage.setItem("tweet",JSON.stringify(tweets))
+    localStorage.setItem("tweets",JSON.stringify(tweets))
 }
 
 export function getSavedTweets():Tweet[]{
-    if(localStorage.getItem("tweet")){
-        return JSON.parse(localStorage.getItem("tweet")||"")
+    if(localStorage.getItem("tweets")){
+        return JSON.parse(localStorage.getItem("tweets")||"")
        
     }
     else return []

@@ -2,7 +2,7 @@ import { User } from "../data/templates"
 import { setNewUser, getUserAuth, getUserById } from "../data/services"
 
 
-function setIdUser (){
+export function createId (){
     const init = Date.now().toString(36)
     const final = Math.random().toString(36).substring(2)
     return init + final
@@ -13,7 +13,7 @@ export function createNewUser(newUser: User){
         ...newUser,
         followers: [],
         followings: [],
-        id_user: setIdUser()
+        id_user: createId()
 
     }
     setNewUser(user)

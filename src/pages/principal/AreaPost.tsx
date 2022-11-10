@@ -45,18 +45,12 @@ function AreaPost(){
         inpuComment = <InputComment/>
     }
 
-    function setComent(e:any){
-        
-    }
-
     function handleTweet(e : any){
         setTweet(e.target.value)
-        console.log(tweet)
     }
 
     function saveTweet(){
-        console.log("teste")
-        tweetController.createTweet(tweet, "450")
+        tweetController.createTweet(tweet, idUserAuth)
     }
 
 
